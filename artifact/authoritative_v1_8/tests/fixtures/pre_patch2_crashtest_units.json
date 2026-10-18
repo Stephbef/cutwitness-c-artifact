@@ -1,0 +1,167 @@
+{
+"closure|pg_ivm|-|witness_minimization+ddmin|-": {
+"digest": "4f81e7660fd0c679aa357707dad894ca7a6280b47c1a6f113ee0a7b435c8507d",
+"keys": [
+"target",
+"unit_class",
+"unit_id",
+"witnesses"
+]
+},
+"full|pg_ivm|-|baseline_native_suite|-": {
+"digest": "279b2ba476491280fb31f69b9a590693384bb17d28e3dd834788eb51fd925258",
+"keys": [
+"censored",
+"coverage",
+"divergences",
+"first_candidate_at",
+"phase",
+"suite_status",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"workload"
+]
+},
+"full|pg_ivm|W3|ablate_no_suffix|0": {
+"digest": "24241ade759372b3e1b8e7aa5ac1920943d1175f05d720d1d6569e4701897eab",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"phase",
+"realized_words",
+"schema",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"unrealizable_words",
+"views",
+"workload"
+]
+},
+"full|pg_ivm|W3|baseline_random_clean|0": {
+"digest": "ccf1fb042e82369d1e09c365f3dbf10c2fde33075e12f8e0d2ad7e916f8bcb77",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"phase",
+"realized_words",
+"schema",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"unrealizable_words",
+"views",
+"workload"
+]
+},
+"full|pg_ivm|W3|baseline_tlp|-": {
+"digest": "1b1eec59932c667458eb79a3221b8a8ccd7666490c7778cfaf6662da4d5ce274",
+"keys": [
+"censored",
+"checks",
+"coverage",
+"divergences",
+"first_candidate_at",
+"phase",
+"schema",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"views",
+"workload"
+]
+},
+"full|pg_ivm|W3|cutwitness_c|0": {
+"digest": "3b462f53dc9a2a86cb5b5f706ac43b4d7cae2e25204355c23b892a377bcdcdb0",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"phase",
+"realized_words",
+"schema",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"unrealizable_words",
+"views",
+"workload"
+]
+},
+"pilot|pg_ivm|W3|baseline_random_clean|0": {
+"digest": "1c8759970ee8dfdaef5c71fc5aecae45d9378b1e71b8c0a1355c096d90a55c6b",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"phase",
+"realized_words",
+"schema",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"unrealizable_words",
+"views",
+"workload"
+]
+},
+"pilot|pg_ivm|W3|cutwitness_c|0": {
+"digest": "ed16b601deaec4d72a1afc330631221605f4b620da7732c8ba6e48ef3a52153d",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"phase",
+"realized_words",
+"schema",
+"target",
+"tool",
+"trial",
+"unit_class",
+"unit_id",
+"unrealizable_words",
+"views",
+"workload"
+]
+}
+}

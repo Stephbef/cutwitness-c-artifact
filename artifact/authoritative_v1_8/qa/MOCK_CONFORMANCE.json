@@ -1,0 +1,638 @@
+{
+ "counts_toward_real_target_gate": false,
+ "evidence_kind": "PROTOCOL_MOCK",
+ "passed": 90,
+ "rows": [
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 1,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 1,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 1,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 2,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 2,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 2,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 3,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 3,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 3,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 4,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 4,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 4,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 5,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 5,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 5,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 6,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 6,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 6,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 7,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 7,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 7,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 8,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 8,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 8,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 9,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 9,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 9,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 10,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 10,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 10,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 11,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 11,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 11,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 12,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 12,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 12,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 13,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 13,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 13,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 14,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 14,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 14,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 15,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 15,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 15,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 16,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 16,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 16,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 17,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 17,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 17,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 18,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 18,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 18,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 19,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 19,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 19,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 20,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 20,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 20,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 21,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 21,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 21,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 22,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 22,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 22,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 23,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 23,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 23,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 24,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 24,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 24,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 25,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 25,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 25,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 26,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 26,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 26,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 27,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 27,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 27,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 28,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 28,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 28,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 29,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 29,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 29,
+   "target": "feldera"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 30,
+   "target": "pg_ivm"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 30,
+   "target": "risingwave"
+  },
+  {
+   "checks": 11,
+   "failed": [],
+   "ok": true,
+   "seed": 30,
+   "target": "feldera"
+  }
+ ],
+ "runs": 90
+}

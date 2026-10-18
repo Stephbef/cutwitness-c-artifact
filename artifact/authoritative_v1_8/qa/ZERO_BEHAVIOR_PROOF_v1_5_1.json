@@ -1,0 +1,35 @@
+{
+ "results": {
+  "files": 110,
+  "byte_identical": true
+ },
+ "witnesses": {
+  "files": 48,
+  "byte_identical": true
+ },
+ "rq2b_matched_pairs.csv": {
+  "rows": 9,
+  "semantically_identical": true
+ },
+ "rq2b_matched_summary.csv": {
+  "rows": 3,
+  "semantically_identical": true
+ },
+ "rq2b_matched_timing.csv": {
+  "rows": 3,
+  "semantically_identical": true
+ },
+ "CAMPAIGN_MATRIX": {
+  "units_old": 873,
+  "units_new": 873,
+  "semantically_identical": true,
+  "csv_bytes_unchanged": true
+ },
+ "differing_run_files": [
+  "FINAL_VERDICT.json",
+  "final_manifest.json",
+  "preseal/CAMPAIGN_PREFLIGHT_REPORT.txt",
+  "preseal/S1_fingerprint.json",
+  "run_meta.json"
+ ]
+}

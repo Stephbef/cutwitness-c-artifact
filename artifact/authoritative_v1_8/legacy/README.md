@@ -1,0 +1,1 @@
+Legacy F1 materials (decision engine, K-contracts, witness search, N0–N6, planning ledgers, manuscripts, audits) are not shipped in this package and are unreachable from the CutWitness-C path. They remain preserved, unmodified, in their original sealed bundles for provenance. No F1 planning result is included or used anywhere in this package.

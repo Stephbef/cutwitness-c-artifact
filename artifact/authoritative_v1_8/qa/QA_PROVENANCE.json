@@ -1,0 +1,13 @@
+{
+ "active_source_digest": "9bd7bf1fbb5836ccec4ad135d014a1c29dd3761084c8171b2bdd7316ee81fc60",
+ "commit": "7c81b10710c9ea54c1b260b4780233a0c6620ed4",
+ "crash_matrix_reference_digest": "06c11d93904101b081b52843e9f0ecd644998799f0338bd25c02f446178429ec",
+ "junit": {
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "tests": 307
+ },
+ "junit_sha256": "7005637f8d7f7278928c1226d132fc6cbb18a1f019a66b25a85ee4bcebf7d60a",
+ "simulation_results_digest": "85f93c25de75076baffad056100692567865f2ea9b1d12e6186b8fc804543386"
+}

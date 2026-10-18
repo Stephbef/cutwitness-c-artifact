@@ -1,0 +1,40 @@
+{
+ "verdict": "COMPLETE_FULL_CAMPAIGN",
+ "results_digest": "eaa5f73ec31dfad523e45b3123996408d58a04849adde05e959e6b0516f14395",
+ "results_digest_identical_to_v1_5_1": true,
+ "results": {
+  "files": 110,
+  "byte_identical": true
+ },
+ "witnesses": {
+  "files": 48,
+  "byte_identical": true
+ },
+ "rq2b_matched_pairs.csv": {
+  "identical": true
+ },
+ "rq2b_matched_summary.csv": {
+  "identical": true
+ },
+ "rq2b_matched_timing.csv": {
+  "identical": true
+ },
+ "matrix": {
+  "CAMPAIGN_MATRIX_csv_byte_identical": true,
+  "TOTAL_UNITS": 873,
+  "ABLATION_UNITS": 270,
+  "RANDOM_SUFFIX_UNITS": 90,
+  "TOTAL_SLOT_HOURS": 3840.0
+ },
+ "unchanged_files": {
+  "campaign_configs": true,
+  "analysis_specs": true,
+  "scientific_amendments": true,
+  "runtime_code": true
+ },
+ "changed_files_since_v1_5_1": [
+  "README_FIRST.md",
+  "tests/test_release_docs.py"
+ ],
+ "ZERO_BEHAVIOR": "HOLDS"
+}

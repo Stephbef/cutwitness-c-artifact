@@ -1,0 +1,50 @@
+{
+ "amendment_commit": "7a34f839c0f56e2c2b1d2ca481d274d1ac16b7da",
+ "amendment_sha256": "370adf5f811a1d691f78e3e2d4e56cd4f2cf80b4765945fff08a2fab2265ebc7",
+ "base_commit": "5280a020449569f7e9f9d5af287467064375d88a",
+ "classification": "PRE-EXECUTION SCIENTIFIC AMENDMENT v1.4 (one matched mechanism-isolation arm)",
+ "config_digest_after": "c2fb3953ed3531e0ab4fd9dc9cd5656287ce80bdf85d49cff586bab4ecf88140",
+ "config_digest_before": "73a04fe379e9ced0b21a92c36d7b17f5d473bfc71da37f9868bf70f1bb8aad4c",
+ "documents": {
+  "adjudication_protocol_v3": "bfd40e71e828aba59256920d811d815e4fc310885421a9b3f21e1044e81bffd1",
+  "analysis_spec_v5": "786b7ad33ccdada52115332c902fc3081ed1e03adf6049a3f2de423b802ad777",
+  "baseline_fidelity": "2d60a0e83304be19a0edd81febf2f2905ed755fbf8c046ce1e884afcd70a4529",
+  "matching_contract": "f355d9ef1f5a88d36d9b38783a68e2eb773eecebab088e332e9e33c7f977c1cd",
+  "search_semantics": "9ae097a9b703d9d1d30babafc7e7b533613c9c03495f4a13a78746dd994b6b90"
+ },
+ "forecast_status": "none; no forecast result values are included in this public artifact",
+ "implementation_diff_sha256": "185567f9c04758e4407c05cb2a46562f729ec6329737a43c66d7e10a03a87fb2",
+ "matrix": {
+  "ablation_units": 270,
+  "gate": "45 days, measured slots, fail closed",
+  "projected_days_at_3_slots": 53.33,
+  "projected_days_at_4_slots": 40.0,
+  "random_suffix_units": 90,
+  "slot_hours": 3840,
+  "total_units": 873
+ },
+ "search_semantics": "paired arms execute identical candidate histories and requested suffix lengths (9/9 simulated cells; tests/test_random_suffix.py)",
+ "unchanged": [
+  "title",
+  "FC/PC/CC",
+  "latent definition",
+  "E_loc",
+  "E_k^D",
+  "P2/P2'",
+  "Lemma D",
+  "P3",
+  "automata",
+  "plan inversion",
+  "CutWitness-C treatment",
+  "all existing baselines and ablations",
+  "targets",
+  "workloads",
+  "versions",
+  "SQL subset",
+  "4 h budget",
+  "10 repetitions",
+  "original seeds",
+  "TEST firewall",
+  "pilot criteria"
+ ]
+}

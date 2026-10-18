@@ -1,0 +1,52 @@
+{
+ "amendment_commit": "9d50af3a26c3042d041b9a5d1257632013ef3cd0",
+ "base_commit": "f13fb299c7eeb7a66d80992e38b5abe0b994e1de",
+ "classification": "PRE-EXECUTION EQUIVALENCE-SAMPLING INSTRUMENTATION AMENDMENT v1 (observation only)",
+ "document_sha256": "e5917b089ee187b88e0101a0ec5a097d3957cc8b75ef828cfbd8ae16f64c8eb8",
+ "files_changed": [
+  "EQUIVALENCE_SAMPLING_INSTRUMENTATION_AMENDMENT_v1.md",
+  "campaign/CRASHTEST_SIMULATION.yaml",
+  "campaign/ENGINEERING_SIMULATION.yaml",
+  "campaign/FROZEN_CAMPAIGN.yaml",
+  "cutwitness/analysis.py",
+  "cutwitness/pipeline.py",
+  "tests/test_rho_instrumentation.py",
+  "tools/make_config.py"
+ ],
+ "low_power_finding": {
+  "decision": "frozen: no change to rho, selection, ranking or execution; claim narrowed to an opportunistic low-power falsification check",
+  "engineering_validation": {
+   "classes": 1294,
+   "comparable": 4,
+   "divergences": 0,
+   "executed_search": 755,
+   "pruned": 502,
+   "rep_unavailable": 2,
+   "sampled_executed": 6,
+   "selected": 43,
+   "trials": 10
+  }
+ },
+ "tests": {
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "total": 302
+ },
+ "zero_search_semantics": {
+  "ZERO_SEARCH_SEMANTICS": "HOLDS",
+  "campaign_matrix_unchanged_since_v1_6": true,
+  "executed_target_histories_v1_6": 1120,
+  "executed_target_histories_v1_7": 1120,
+  "execution_logs_identical": true,
+  "keyed_by": "unit_id (result files are content-addressed)",
+  "rq2b_outputs_identical": true,
+  "seeds_identical": true,
+  "unit_ids_identical": true,
+  "unit_results_identical_except_new_rho_field": true,
+  "units_compared": 110,
+  "units_with_rho_record": 37,
+  "witness_files": 48,
+  "witness_files_byte_identical": true
+ }
+}

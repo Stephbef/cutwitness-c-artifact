@@ -1,0 +1,5 @@
+# runtime lock: offline install with --no-index --require-hashes
+duckdb==1.1.3 --hash=sha256:4ebf5f60ddbd65c13e77cddb85fe4af671d31b851f125a4d002a313696af43f1
+psycopg==3.2.10 --hash=sha256:ab5caf09a9ec42e314a21f5216dbcceac528e0e05142e42eea83a3b28b320ac3
+psycopg-binary==3.2.10 --hash=sha256:14bcbcac0cab465d88b2581e43ec01af4b01c9833e663f1352e05cb41be19e44
+typing-extensions==4.12.2 --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d

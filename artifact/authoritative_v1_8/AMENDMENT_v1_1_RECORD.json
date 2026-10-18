@@ -1,0 +1,342 @@
+{
+ "amendment_path": "CUTWITNESS_C_PREEXECUTION_FEASIBILITY_AMENDMENT_v1_1.md (identical copy at science/)",
+ "amendment_sha256": "a44f721ca7252cde7d1f1d33608c802d54d15864c67b7b0e3ffc976f10c1c535",
+ "duration_gate": "max_campaign_days = 45, measured slots, fail closed, no bypass flag",
+ "exact_parameter_diff_pre_to_post": [
+  {
+   "after": [
+    {
+     "path": "science/CUTWITNESS_C_PREEXECUTION_FEASIBILITY_AMENDMENT_v1_1.md",
+     "pre_amendment_commit": "a859cc3",
+     "pre_amendment_config_digest": "36e24c592a173a1f26a492b782f744b2a8ac3afbb3ff0bf5fbd90e24b2c19ba6",
+     "sha256": "a44f721ca7252cde7d1f1d33608c802d54d15864c67b7b0e3ffc976f10c1c535",
+     "version": "1.1"
+    }
+   ],
+   "before": "<absent>",
+   "path": "amendments"
+  },
+  {
+   "after": {
+    "est_bytes_per_unit": 2000000,
+    "est_hours_per_execution": 0.0003,
+    "expected_witnesses_upper_bound": 500,
+    "max_campaign_days": 45,
+    "overhead_hours": 2.0,
+    "per_slot_disk_gib": 100,
+    "port_span": 2000,
+    "reserve_ram_gib": 8,
+    "reserve_vcpus": 2
+   },
+   "before": "<absent>",
+   "path": "duration_gate"
+  },
+  {
+   "after": 14400,
+   "before": 86400,
+   "path": "full.budget.value"
+  },
+  {
+   "after": {
+    "ablation_map": {
+     "ablate_no_guidance": {
+      "rqs": [
+       "RQ3"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W3"
+      ]
+     },
+     "ablate_no_reduction": {
+      "rqs": [
+       "RQ3"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W3"
+      ]
+     },
+     "ablate_no_suffix": {
+      "rqs": [
+       "RQ2"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W1",
+       "W2",
+       "W3"
+      ]
+     },
+     "ablate_random_lifecycle": {
+      "rqs": [
+       "RQ4"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W1"
+      ]
+     }
+    },
+    "deterministic_suites": {
+     "feldera": {
+      "applicable": false,
+      "reason": "pinned pipeline-manager image ships no SQL test runner"
+     },
+     "pg_ivm": {
+      "applicable": true,
+      "est_hours": 1.0
+     },
+     "risingwave": {
+      "applicable": false,
+      "reason": "pinned release image ships no sqllogictest runner or e2e suite"
+     }
+    },
+    "minimization": {
+     "est_hours_per_target": 4.0,
+     "rqs": [
+      "RQ5"
+     ]
+    },
+    "search_tools": [
+     "cutwitness_c",
+     "baseline_random_clean",
+     "baseline_random_te",
+     "baseline_stateful_fuzz",
+     "baseline_zippy",
+     "baseline_source_por"
+    ],
+    "secondary_oracles": {
+     "baseline_tlp": {
+      "checks": 300,
+      "est_hours": 1.0,
+      "rqs": [
+       "RQ1"
+      ]
+     }
+    }
+   },
+   "before": "<absent>",
+   "path": "matrix"
+  },
+  {
+   "after": 4,
+   "before": "<absent>",
+   "path": "resources.configured_max_slots"
+  },
+  {
+   "after": "<absent>",
+   "before": 45,
+   "path": "resources.max_campaign_days"
+  },
+  {
+   "after": "<absent>",
+   "before": 4,
+   "path": "resources.slots"
+  }
+ ],
+ "final_packaged_config_digest": "89a0b8107a74f71c01b25b3afccb8c90ad1db59e123d6a2e654be10232f17784",
+ "final_vs_post_amendment_config_differences": [
+  "ablations",
+  "analysis_spec",
+  "code_tree_digest",
+  "evidence",
+  "full.tools",
+  "matrix.ablation_map.ablate_deletion_matched_suffix",
+  "matrix.ablation_map.ablate_random_suffix",
+  "release_state",
+  "targets.pg_ivm.command",
+  "tester_conformance.seeded_faults"
+ ],
+ "justification": "Prospective feasibility correction: the v1.0 matrix projected ~253 days on 4 slots. Changed before any real observation.",
+ "no_real_test_observation_before_amendment": true,
+ "post_amendment_commit": "ab065a9b9aa6a19d4592d6e4a37ead5d94b29455",
+ "post_amendment_config_digest": "b50e41b8f905fd1bd60118a7e5245f9414aaf6fcd45483a7d95e76fa6262cad5",
+ "pre_amendment_commit": "a859cc33189e002714c00a22b7540e88333c6757",
+ "pre_amendment_config_digest": "36e24c592a173a1f26a492b782f744b2a8ac3afbb3ff0bf5fbd90e24b2c19ba6",
+ "record_generated_utc": "2026-10-18T04:17:45Z",
+ "record_note": "Later config digests differ from the post-amendment digest only in operational fields listed above (code-tree digest after fixes, SEALED release state, pg_ivm server command); no scientific parameter changed after the amendment.",
+ "scientific_changes_after_amendment": [
+  "full.tools",
+  "matrix.ablation_map.ablate_deletion_matched_suffix",
+  "matrix.ablation_map.ablate_random_suffix"
+ ],
+ "scientific_parameter_changes": [
+  {
+   "after": [
+    {
+     "path": "science/CUTWITNESS_C_PREEXECUTION_FEASIBILITY_AMENDMENT_v1_1.md",
+     "pre_amendment_commit": "a859cc3",
+     "pre_amendment_config_digest": "36e24c592a173a1f26a492b782f744b2a8ac3afbb3ff0bf5fbd90e24b2c19ba6",
+     "sha256": "a44f721ca7252cde7d1f1d33608c802d54d15864c67b7b0e3ffc976f10c1c535",
+     "version": "1.1"
+    }
+   ],
+   "before": "<absent>",
+   "path": "amendments"
+  },
+  {
+   "after": {
+    "est_bytes_per_unit": 2000000,
+    "est_hours_per_execution": 0.0003,
+    "expected_witnesses_upper_bound": 500,
+    "max_campaign_days": 45,
+    "overhead_hours": 2.0,
+    "per_slot_disk_gib": 100,
+    "port_span": 2000,
+    "reserve_ram_gib": 8,
+    "reserve_vcpus": 2
+   },
+   "before": "<absent>",
+   "path": "duration_gate"
+  },
+  {
+   "after": 14400,
+   "before": 86400,
+   "path": "full.budget.value"
+  },
+  {
+   "after": {
+    "ablation_map": {
+     "ablate_no_guidance": {
+      "rqs": [
+       "RQ3"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W3"
+      ]
+     },
+     "ablate_no_reduction": {
+      "rqs": [
+       "RQ3"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W3"
+      ]
+     },
+     "ablate_no_suffix": {
+      "rqs": [
+       "RQ2"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W1",
+       "W2",
+       "W3"
+      ]
+     },
+     "ablate_random_lifecycle": {
+      "rqs": [
+       "RQ4"
+      ],
+      "targets": [
+       "pg_ivm",
+       "feldera",
+       "risingwave"
+      ],
+      "workloads": [
+       "W1"
+      ]
+     }
+    },
+    "deterministic_suites": {
+     "feldera": {
+      "applicable": false,
+      "reason": "pinned pipeline-manager image ships no SQL test runner"
+     },
+     "pg_ivm": {
+      "applicable": true,
+      "est_hours": 1.0
+     },
+     "risingwave": {
+      "applicable": false,
+      "reason": "pinned release image ships no sqllogictest runner or e2e suite"
+     }
+    },
+    "minimization": {
+     "est_hours_per_target": 4.0,
+     "rqs": [
+      "RQ5"
+     ]
+    },
+    "search_tools": [
+     "cutwitness_c",
+     "baseline_random_clean",
+     "baseline_random_te",
+     "baseline_stateful_fuzz",
+     "baseline_zippy",
+     "baseline_source_por"
+    ],
+    "secondary_oracles": {
+     "baseline_tlp": {
+      "checks": 300,
+      "est_hours": 1.0,
+      "rqs": [
+       "RQ1"
+      ]
+     }
+    }
+   },
+   "before": "<absent>",
+   "path": "matrix"
+  },
+  {
+   "after": 4,
+   "before": "<absent>",
+   "path": "resources.configured_max_slots"
+  },
+  {
+   "after": "<absent>",
+   "before": 45,
+   "path": "resources.max_campaign_days"
+  },
+  {
+   "after": "<absent>",
+   "before": 4,
+   "path": "resources.slots"
+  }
+ ],
+ "unchanged": [
+  "10 stochastic repetitions",
+  "all baseline families",
+  "pilot tools, 12 h budget and A-D thresholds",
+  "targets",
+  "workloads",
+  "seeds and HMAC derivation",
+  "RQ1-RQ5",
+  "bug accounting",
+  "right-censoring of zero-bug runs",
+  "VALIDATION/TEST firewall"
+ ],
+ "upgrade": "excluded on all three targets (unchanged)"
+}

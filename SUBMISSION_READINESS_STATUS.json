@@ -1,0 +1,23 @@
+{
+ "anonymity_scan": {
+  "generated_or_history_files": [],
+  "intentional_patterns": [
+   "artifact/authoritative_v1_8/cutwitness/security.py: assistant or vendor name",
+   "artifact/authoritative_v1_8/tests/test_security.py: workstation path",
+   "artifact/authoritative_v1_8/tests/test_security.py: secret token",
+   "artifact/authoritative_v1_8/vendor/wheels/duckdb-1.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl: email [third-party vendored package metadata]",
+   "scripts/submission_readiness.py: assistant or vendor name"
+  ],
+  "ok": true,
+  "real_leaks": []
+ },
+ "authoritative_package_integrity": {
+  "detail": "PACKAGE_VERIFY PASS files 168 mismatched [] unlisted []",
+  "ok": true
+ },
+ "observed_result_bundle_present": {
+  "detail": "no results/FINAL_VERDICT.json: real campaign not executed",
+  "ok": false
+ },
+ "submission_support_ready": false
+}

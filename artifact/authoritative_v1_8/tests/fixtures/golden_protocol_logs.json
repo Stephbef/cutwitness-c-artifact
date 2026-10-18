@@ -1,0 +1,271 @@
+{
+"feldera_http": [
+[
+"PUT",
+"/v0/pipelines/golden",
+{}
+],
+[
+"GET",
+"/v0/pipelines/golden",
+{}
+],
+[
+"GET",
+"/v0/pipelines/golden",
+{}
+],
+[
+"GET",
+"/v0/pipelines/golden",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/start",
+{}
+],
+[
+"GET",
+"/v0/pipelines/golden",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/ingress/t0",
+{
+"array": "false",
+"format": "json",
+"update_format": "insert_delete"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/stats",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/ingress/t0",
+{
+"array": "false",
+"format": "json",
+"update_format": "insert_delete"
+}
+],
+[
+"POST",
+"/v0/pipelines/golden/ingress/t1",
+{
+"array": "false",
+"format": "json",
+"update_format": "insert_delete"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/stats",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/ingress/t0",
+{
+"array": "false",
+"format": "json",
+"update_format": "insert_delete"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/stats",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/ingress/t1",
+{
+"array": "false",
+"format": "json",
+"update_format": "insert_delete"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/stats",
+{}
+],
+[
+"GET",
+"/v0/pipelines/golden/query",
+{
+"format": "json",
+"sql": "SELECT c0, c1, c2, c3, c3_s, c3_n, c4 FROM v_group"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/query",
+{
+"format": "json",
+"sql": "SELECT c0, c1 FROM v_distinct"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/query",
+{
+"format": "json",
+"sql": "SELECT c0, c1, c2, c3 FROM v_topk"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/query",
+{
+"format": "json",
+"sql": "SELECT c0, c1, c2, c3, c4, c5 FROM v_join"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/query",
+{
+"format": "json",
+"sql": "SELECT c0, c1, c2, c3, c4, c5 FROM v_ljoin"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden/query",
+{
+"format": "json",
+"sql": "SELECT c0, c1, c2 FROM v_stacked"
+}
+],
+[
+"POST",
+"/v0/pipelines/golden/checkpoint",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/stop",
+{
+"force": "false"
+}
+],
+[
+"GET",
+"/v0/pipelines/golden",
+{}
+],
+[
+"POST",
+"/v0/pipelines/golden/start",
+{}
+],
+[
+"GET",
+"/v0/pipelines/golden",
+{}
+]
+],
+"pg_ivm_docker": [
+[
+"docker",
+"restart",
+"-t",
+"5",
+"cw-pgivm"
+]
+],
+"pg_ivm_sql": [
+"CREATE TABLE t0 (c0 BIGINT NOT NULL, c1 BIGINT NOT NULL, c2 DECIMAL(18,4), c3 VARCHAR NOT NULL, PRIMARY KEY (c0))",
+"CREATE TABLE t1 (c0 BIGINT NOT NULL, c1 BIGINT NOT NULL, c2 DECIMAL(18,4), c3 VARCHAR NOT NULL, PRIMARY KEY (c0))",
+"SELECT current_setting('server_version_num')",
+"SELECT extversion FROM pg_extension WHERE extname = 'pg_ivm'",
+"SELECT n.nspname FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace WHERE p.proname = 'create_immv'",
+"SELECT pgivm.create_immv(%s, %s)",
+"SELECT pgivm.create_immv(%s, %s)",
+"SELECT pgivm.create_immv(%s, %s)",
+"SELECT pgivm.create_immv(%s, %s)",
+"SELECT pgivm.create_immv(%s, %s)",
+"BEGIN",
+"INSERT INTO t0 VALUES (%s, %s, %s, %s)",
+"COMMIT",
+"BEGIN",
+"INSERT INTO t0 VALUES (%s, %s, %s, %s)",
+"INSERT INTO t1 VALUES (%s, %s, %s, %s)",
+"COMMIT",
+"BEGIN",
+"INSERT INTO t0 VALUES (%s, %s, %s, %s)",
+"COMMIT",
+"BEGIN",
+"INSERT INTO t1 VALUES (%s, %s, %s, %s)",
+"COMMIT",
+"SELECT c0, c1, c2, c3, c3_s, c3_n, c4 FROM v_group",
+"SELECT c0, c1 FROM v_distinct",
+"SELECT c0, c1, c2, c3, c4, c5 FROM v_join",
+"SELECT c0, c1, c2, c3, c4, c5 FROM v_ljoin",
+"SELECT c0, c1, c2 FROM v_stacked",
+"SELECT 1",
+"VACUUM FULL t0",
+"VACUUM FULL t1",
+"VACUUM FULL v_group",
+"VACUUM FULL v_distinct",
+"VACUUM FULL v_join",
+"VACUUM FULL v_ljoin",
+"VACUUM FULL v_stacked"
+],
+"risingwave_docker": [
+[
+"docker",
+"kill",
+"--signal=KILL",
+"cw-risingwave"
+],
+[
+"docker",
+"start",
+"cw-risingwave"
+]
+],
+"risingwave_sql": [
+"CREATE TABLE t0 (c0 BIGINT NOT NULL, c1 BIGINT NOT NULL, c2 DECIMAL(18,4), c3 VARCHAR NOT NULL, PRIMARY KEY (c0))",
+"CREATE TABLE t1 (c0 BIGINT NOT NULL, c1 BIGINT NOT NULL, c2 DECIMAL(18,4), c3 VARCHAR NOT NULL, PRIMARY KEY (c0))",
+"CREATE MATERIALIZED VIEW v_group AS SELECT q0.c1 AS c0, COUNT(*) AS c1, SUM(q0.c2) AS c2, AVG(q0.c2) AS c3, SUM(q0.c2) AS c3_s, COUNT(q0.c2) AS c3_n, MIN(q0.c2) AS c4 FROM t0 AS q0 WHERE q0.c2 IS NOT NULL GROUP BY q0.c1",
+"CREATE MATERIALIZED VIEW v_distinct AS SELECT DISTINCT q0.c1 AS c0, q0.c3 AS c1 FROM t1 AS q0",
+"CREATE MATERIALIZED VIEW v_topk AS SELECT c0, c1, c2, c3 FROM (SELECT q0.c0 AS c0, q0.c1 AS c1, q0.c2 AS c2, q0.c3 AS c3, ROW_NUMBER() OVER (PARTITION BY q0.c1 ORDER BY q0.c2 ASC NULLS LAST, q0.c0 ASC NULLS LAST, q0.c1 ASC NULLS LAST, q0.c2 ASC NULLS LAST, q0.c3 ASC NULLS LAST) AS rn FROM t0 AS q0) AS qt WHERE rn <= 2",
+"CREATE MATERIALIZED VIEW v_join AS SELECT ql.c0 AS c0, ql.c1 AS c1, ql.c2 AS c2, qr.c0 AS c3, qr.c1 AS c4, qr.c3 AS c5 FROM t0 AS ql JOIN t1 AS qr ON ql.c1 = qr.c1",
+"CREATE MATERIALIZED VIEW v_ljoin AS SELECT ql.c0 AS c0, ql.c1 AS c1, ql.c2 AS c2, qr.c0 AS c3, qr.c1 AS c4, qr.c3 AS c5 FROM t0 AS ql LEFT JOIN t1 AS qr ON ql.c1 = qr.c1",
+"CREATE MATERIALIZED VIEW v_stacked AS SELECT ql.c1 AS c0, COUNT(*) AS c1, SUM(ql.c2) AS c2 FROM t0 AS ql JOIN t1 AS qr ON ql.c1 = qr.c1 GROUP BY ql.c1",
+"SET RW_IMPLICIT_FLUSH = false",
+"INSERT INTO t0 VALUES (%s, %s, %s, %s)",
+"FLUSH",
+"SET RW_IMPLICIT_FLUSH = false",
+"INSERT INTO t0 VALUES (%s, %s, %s, %s)",
+"INSERT INTO t1 VALUES (%s, %s, %s, %s)",
+"FLUSH",
+"SET RW_IMPLICIT_FLUSH = false",
+"INSERT INTO t0 VALUES (%s, %s, %s, %s)",
+"FLUSH",
+"SET RW_IMPLICIT_FLUSH = false",
+"INSERT INTO t1 VALUES (%s, %s, %s, %s)",
+"FLUSH",
+"SELECT c0, c1, c2, c3, c3_s, c3_n, c4 FROM v_group",
+"SELECT c0, c1 FROM v_distinct",
+"SELECT c0, c1, c2, c3 FROM v_topk",
+"SELECT c0, c1, c2, c3, c4, c5 FROM v_join",
+"SELECT c0, c1, c2, c3, c4, c5 FROM v_ljoin",
+"SELECT c0, c1, c2 FROM v_stacked",
+"ALTER MATERIALIZED VIEW v_group SET PARALLELISM = 2",
+"ALTER MATERIALIZED VIEW v_distinct SET PARALLELISM = 2",
+"ALTER MATERIALIZED VIEW v_topk SET PARALLELISM = 2",
+"ALTER MATERIALIZED VIEW v_join SET PARALLELISM = 2",
+"ALTER MATERIALIZED VIEW v_ljoin SET PARALLELISM = 2",
+"ALTER MATERIALIZED VIEW v_stacked SET PARALLELISM = 2",
+"FLUSH",
+"SELECT 1"
+]
+}

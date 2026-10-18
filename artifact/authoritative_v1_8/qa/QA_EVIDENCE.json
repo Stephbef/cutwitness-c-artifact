@@ -1,0 +1,183 @@
+{
+ "correct_engine": {
+  "false_divergences": 0,
+  "histories": 1500
+ },
+ "label": "ENGINEERING VALIDATION ONLY — NOT SCIENTIFIC RESULTS",
+ "reference_vs_duckdb": {
+  "examples": [],
+  "mismatches": 0,
+  "states": 300,
+  "view_evaluations": 1800
+ },
+ "seeded_fault_matrix_random": {
+  "F10_CROSS_KEY_OUT_OF_MODEL": {
+   "candidates": 14,
+   "detected_at_cut": 13,
+   "detected_with_suffix": 14,
+   "in_model": false,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 14
+   },
+   "trials": 40
+  },
+  "F11_NONDETERMINISM": {
+   "candidates": 0,
+   "detected_at_cut": 20,
+   "detected_with_suffix": 38,
+   "in_model": false,
+   "nondeterminism_control": true,
+   "triage": {
+    "NO_DIVERGENCE": 6,
+    "TARGET_NONDETERMINISM": 32
+   },
+   "trials": 40
+  },
+  "F1_WRONG_MULT": {
+   "candidates": 22,
+   "detected_at_cut": 22,
+   "detected_with_suffix": 22,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 22
+   },
+   "trials": 40
+  },
+  "F2_LOST_DELETE": {
+   "candidates": 21,
+   "detected_at_cut": 15,
+   "detected_with_suffix": 21,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 21
+   },
+   "trials": 40
+  },
+  "F3_DUP_INSERT_LATENT": {
+   "candidates": 31,
+   "detected_at_cut": 30,
+   "detected_with_suffix": 31,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 31
+   },
+   "trials": 40
+  },
+  "F4_MINMAX_EXTREMUM": {
+   "candidates": 14,
+   "detected_at_cut": 6,
+   "detected_with_suffix": 14,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 14
+   },
+   "trials": 40
+  },
+  "F5_DISTINCT_DUPCOUNT_LATENT": {
+   "candidates": 8,
+   "detected_at_cut": 6,
+   "detected_with_suffix": 8,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 8
+   },
+   "trials": 40
+  },
+  "F6_OUTER_PAD": {
+   "candidates": 27,
+   "detected_at_cut": 25,
+   "detected_with_suffix": 27,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 27
+   },
+   "trials": 40
+  },
+  "F7_TOPK_REFILL": {
+   "candidates": 5,
+   "detected_at_cut": 0,
+   "detected_with_suffix": 5,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 5
+   },
+   "trials": 40
+  },
+  "F8_LIFECYCLE_RESTORE": {
+   "candidates": 29,
+   "detected_at_cut": 29,
+   "detected_with_suffix": 29,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "LIFECYCLE_RECOVERY_BUG": 29
+   },
+   "trials": 40
+  },
+  "F9_LATENT_RESIDUAL": {
+   "candidates": 39,
+   "detected_at_cut": 19,
+   "detected_with_suffix": 39,
+   "in_model": true,
+   "nondeterminism_control": false,
+   "triage": {
+    "TARGET_MAINTENANCE_BUG": 39
+   },
+   "trials": 40
+  },
+  "N1_ALTERNATING": {
+   "candidates": 0,
+   "detected_at_cut": 20,
+   "detected_with_suffix": 20,
+   "in_model": false,
+   "nondeterminism_control": true,
+   "triage": {
+    "NO_DIVERGENCE": 20
+   },
+   "trials": 40
+  },
+  "N2_PERIODIC": {
+   "candidates": 0,
+   "detected_at_cut": 8,
+   "detected_with_suffix": 8,
+   "in_model": false,
+   "nondeterminism_control": true,
+   "triage": {
+    "NO_DIVERGENCE": 8
+   },
+   "trials": 40
+  },
+  "N3_FIRST_NINE_EQUAL": {
+   "candidates": 0,
+   "detected_at_cut": 1,
+   "detected_with_suffix": 1,
+   "in_model": false,
+   "nondeterminism_control": true,
+   "triage": {
+    "NO_DIVERGENCE": 1
+   },
+   "trials": 40
+  },
+  "N4_BURSTY": {
+   "candidates": 0,
+   "detected_at_cut": 19,
+   "detected_with_suffix": 20,
+   "in_model": false,
+   "nondeterminism_control": true,
+   "triage": {
+    "NO_DIVERGENCE": 6,
+    "TARGET_NONDETERMINISM": 14
+   },
+   "trials": 40
+  }
+ },
+ "wall_s": 34.3
+}

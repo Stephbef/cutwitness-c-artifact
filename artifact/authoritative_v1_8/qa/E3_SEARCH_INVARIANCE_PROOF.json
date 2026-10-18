@@ -1,0 +1,20 @@
+{
+ "results": {
+  "files": 110,
+  "byte_identical": true
+ },
+ "witnesses": {
+  "files": 48,
+  "byte_identical": true
+ },
+ "matrix_csv_unchanged_since_v1_5_2": true,
+ "rq2b_outputs_identical": true,
+ "attribution_rows": 6,
+ "attribution_by_class_detail": {
+  "CONTINUATION_TRIGGERED/CONTINUATION_TRIGGERED": 6
+ },
+ "e3_columns_present": true,
+ "v1_5_2_attribution_by_class": {
+  "CONTINUATION_TRIGGERED": 6
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "audit": [
+  {
+   "action": "replaced by the frozen minimum: 34 vCPU, 136 GiB RAM, 500 GiB free disk (500 GiB = S2 preflight minimum; 400 GiB slot allowance + 100 GiB headroom)",
+   "classification": "ACTIVE_STALE",
+   "file": "README_FIRST.md:35",
+   "occurrence": "'about 34+ vCPU, 136+ GiB RAM and 400+ GiB free disk for four'"
+  },
+  {
+   "action": "unchanged",
+   "classification": "CORRECT_CURRENT",
+   "file": "campaign/FROZEN_CAMPAIGN.yaml",
+   "occurrence": "server_requirements {cpus: 34, ram_gb: 136, disk_gb: 500}"
+  },
+  {
+   "action": "unchanged",
+   "classification": "CORRECT_CURRENT",
+   "file": "campaign/FROZEN_CAMPAIGN.yaml (duration_gate)",
+   "occurrence": "per_slot_disk_gib = 100"
+  },
+  {
+   "action": "\u2014",
+   "classification": "none found",
+   "file": "all other current-facing .md/.txt/.sh",
+   "occurrence": "other '400 GiB' / '500 GiB' / 'disk minimum' / 'disk requirement'"
+  }
+ ],
+ "base_commit": "e03189c846c74ced6ec77159b9faa2f1f52555d7",
+ "classification": "RELEASE HYGIENE v1.5.2 (disk-requirement documentation consistency only)",
+ "documented_minimum_server": {
+  "cpus": 34,
+  "free_disk_gib": 500,
+  "ram_gib": 136,
+  "source": "server_requirements (FROZEN_CAMPAIGN.yaml), enforced by S2 static preflight"
+ },
+ "hygiene_commit": "bf6935cfa35b184a7dfdc826c929200ba07bb0cf",
+ "regression": "tests/test_release_docs.py (derives minima from FROZEN_CAMPAIGN.yaml; mutation-checked)",
+ "tests": {
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "total": 269
+ },
+ "zero_behavior_proof": {
+  "ZERO_BEHAVIOR": "HOLDS",
+  "changed_files_since_v1_5_1": [
+   "README_FIRST.md",
+   "tests/test_release_docs.py"
+  ],
+  "matrix": {
+   "ABLATION_UNITS": 270,
+   "CAMPAIGN_MATRIX_csv_byte_identical": true,
+   "RANDOM_SUFFIX_UNITS": 90,
+   "TOTAL_SLOT_HOURS": 3840.0,
+   "TOTAL_UNITS": 873
+  },
+  "results": {
+   "byte_identical": true,
+   "files": 110
+  },
+  "results_digest": "eaa5f73ec31dfad523e45b3123996408d58a04849adde05e959e6b0516f14395",
+  "results_digest_identical_to_v1_5_1": true,
+  "rq2b_matched_pairs.csv": {
+   "identical": true
+  },
+  "rq2b_matched_summary.csv": {
+   "identical": true
+  },
+  "rq2b_matched_timing.csv": {
+   "identical": true
+  },
+  "unchanged_files": {
+   "analysis_specs": true,
+   "campaign_configs": true,
+   "runtime_code": true,
+   "scientific_amendments": true
+  },
+  "verdict": "COMPLETE_FULL_CAMPAIGN",
+  "witnesses": {
+   "byte_identical": true,
+   "files": 48
+  }
+ }
+}

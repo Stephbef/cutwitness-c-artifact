@@ -1,0 +1,380 @@
+{
+ "ablations": [
+  "ablate_no_suffix",
+  "ablate_no_guidance",
+  "ablate_no_reduction",
+  "ablate_random_lifecycle",
+  "ablate_random_suffix",
+  "ablate_deletion_matched_suffix"
+ ],
+ "amendments": [
+  {
+   "path": "science/CUTWITNESS_C_PREEXECUTION_FEASIBILITY_AMENDMENT_v1_1.md",
+   "pre_amendment_commit": "a859cc3",
+   "pre_amendment_config_digest": "36e24c592a173a1f26a492b782f744b2a8ac3afbb3ff0bf5fbd90e24b2c19ba6",
+   "sha256": "a44f721ca7252cde7d1f1d33608c802d54d15864c67b7b0e3ffc976f10c1c535",
+   "version": "1.1"
+  }
+ ],
+ "analysis_spec": {
+  "ablation_families": {
+   "ablate_deletion_matched_suffix": {
+    "inferential": true,
+    "paired": true,
+    "primary_metric": "matched_pair_exact_sign_test",
+    "rq": "RQ2c"
+   },
+   "ablate_no_guidance": {
+    "primary_metric": "candidate_ttf",
+    "rq": "RQ3"
+   },
+   "ablate_no_reduction": {
+    "primary_metric": "candidate_ttf",
+    "rq": "RQ3"
+   },
+   "ablate_no_suffix": {
+    "descriptive": "root-cause overlap and suffix-specific latent roots (post-run adjudication)",
+    "inferential": false,
+    "primary_metric": "none",
+    "rq": "RQ2"
+   },
+   "ablate_random_lifecycle": {
+    "primary_metric": "lifecycle_rate_per_1000",
+    "rq": "RQ4"
+   },
+   "ablate_random_suffix": {
+    "inferential": true,
+    "paired": true,
+    "primary_metric": "matched_pair_exact_sign_test",
+    "rq": "RQ2b"
+   }
+  },
+  "path": "science/ANALYSIS_SPEC_v7.md",
+  "sha256": "3507dc208ac98686fe93ae60e2e66b43fc362d42156febbd9bfed7194d4656b7",
+  "version": "7"
+ },
+ "artifact": {
+  "raw_gtfs_redistribution": "by license_class only",
+  "sha256sums": true
+ },
+ "baselines": [
+  "baseline_random_clean",
+  "baseline_random_te",
+  "baseline_stateful_fuzz",
+  "baseline_zippy",
+  "baseline_source_por",
+  "baseline_tlp",
+  "ddmin_witness_comparison",
+  "target_native_suites_at_S4"
+ ],
+ "bug_statuses": [
+  "NEW",
+  "DUPLICATE",
+  "KNOWN",
+  "INVALID",
+  "EXPECTED",
+  "ACKNOWLEDGED",
+  "FIXED",
+  "UNRESOLVED"
+ ],
+ "capability_matrix": {
+  "pg_ivm": {
+   "lifecycle": {
+    "CHECKPOINT": "SUPPORTED",
+    "COMPACT": "SUPPORTED",
+    "KILL_RECOVER": "SUPPORTED",
+    "REPLACE_VIEW_IDENTICAL": "SUPPORTED",
+    "RESCALE": "UNSUPPORTED",
+    "RESTART": "SUPPORTED",
+    "RESTORE_LATEST": "UNSUPPORTED",
+    "UPGRADE": "UNSUPPORTED"
+   },
+   "ops": {
+    "distinct": "SUPPORTED",
+    "group": "SUPPORTED",
+    "join": "SUPPORTED",
+    "leftjoin": "SUPPORTED",
+    "topk": "UNSUPPORTED"
+   }
+  }
+ },
+ "code_tree_digest": "698919a22029c0957edbffa9cba3f864401a204e092e327f6fd30ff04b950b24",
+ "demotion_rule": "S8 re-executes every candidate nondet_reruns times in fresh sessions; any observation digest differing from the recorded one demotes it to TARGET_NONDETERMINISM",
+ "duration_gate": {
+  "est_bytes_per_unit": 2000000,
+  "est_hours_per_execution": 0.0003,
+  "expected_witnesses_upper_bound": 500,
+  "max_campaign_days": 45,
+  "overhead_hours": 2.0,
+  "per_slot_disk_gib": 1,
+  "port_span": 2000,
+  "reserve_ram_gib": 0,
+  "reserve_vcpus": 0
+ },
+ "evidence": {
+  "adjudication_protocol": {
+   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md",
+   "sha256": "72fcd326858421df802cda34725a57a482fcfef991c4f99dadd9b7dfb767d725"
+  },
+  "amendment_v1_4": {
+   "path": "SCIENTIFIC_AMENDMENT_v1_4.md",
+   "sha256": "370adf5f811a1d691f78e3e2d4e56cd4f2cf80b4765945fff08a2fab2265ebc7"
+  },
+  "attribution_amendment": {
+   "path": "CUTWITNESS_C_PREEXECUTION_ATTRIBUTION_AMENDMENT_v1_2.md",
+   "replays_per_path": "nondet_reruns",
+   "sha256": "53ae3c41721450b280e9ec305b1094ed6d69c6090538e21a24ca582e840a59a5"
+  },
+  "e3_amendment": {
+   "path": "E3_ATTRIBUTION_AMENDMENT.md",
+   "sha256": "21c37d5270bd214d24378e00718efde3dcb8f9eedb57dfa0c5138a34d20a56e8"
+  },
+  "patch": "Patch-2 pre-execution evidence instrumentation (observation only)",
+  "rho_instrumentation_amendment": {
+   "path": "EQUIVALENCE_SAMPLING_INSTRUMENTATION_AMENDMENT_v1.md",
+   "sha256": "a27bb3404da9def294a44c90a815d0368c8d70e10c9d2bf5406eac228a32673a"
+  },
+  "timing_mode": "logical"
+ },
+ "full": {
+  "budget": {
+   "kind": "executions",
+   "value": 2
+  },
+  "targets": [
+   "pg_ivm"
+  ],
+  "tools": [
+   "cutwitness_c",
+   "baseline_random_clean",
+   "baseline_random_te",
+   "baseline_stateful_fuzz",
+   "baseline_zippy",
+   "baseline_source_por",
+   "baseline_tlp",
+   "ablate_no_suffix",
+   "ablate_no_guidance",
+   "ablate_no_reduction",
+   "ablate_random_lifecycle",
+   "ablate_random_suffix",
+   "ablate_deletion_matched_suffix"
+  ],
+  "trials": 1,
+  "workloads": [
+   "W3"
+  ]
+ },
+ "hmac": "HMAC-SHA256(master_seed, '|'.join(parts)) first 8 bytes, big-endian",
+ "k": 2,
+ "master_seed": "cutwitness-c/master-seed/published-2026-10-15/7d2c9e41",
+ "matrix": {
+  "ablation_map": {
+   "ablate_deletion_matched_suffix": {
+    "matched_seed_of": "cutwitness_c",
+    "rqs": [
+     "RQ2c"
+    ],
+    "targets": [
+     "pg_ivm"
+    ],
+    "workloads": [
+     "W3"
+    ]
+   },
+   "ablate_no_suffix": {
+    "rqs": [
+     "RQ2"
+    ],
+    "targets": [
+     "pg_ivm"
+    ],
+    "workloads": [
+     "W3"
+    ]
+   },
+   "ablate_random_suffix": {
+    "matched_seed_of": "cutwitness_c",
+    "rqs": [
+     "RQ2b"
+    ],
+    "targets": [
+     "pg_ivm"
+    ],
+    "workloads": [
+     "W3"
+    ]
+   }
+  },
+  "deterministic_suites": {
+   "pg_ivm": {
+    "applicable": true,
+    "est_hours": 0.0
+   }
+  },
+  "minimization": {
+   "est_hours_per_target": 4.0,
+   "rqs": [
+    "RQ5"
+   ]
+  },
+  "search_tools": [
+   "cutwitness_c",
+   "baseline_random_clean"
+  ],
+  "secondary_oracles": {
+   "baseline_tlp": {
+    "checks": 3,
+    "est_hours": 0.0,
+    "rqs": [
+     "RQ1"
+    ]
+   }
+  }
+ },
+ "mode": "ENGINEERING_SIMULATION",
+ "nondet_reruns": 10,
+ "one_shot_amendment_digest": "3e69e5694f840e0ae86237e25829157ace6c72d1a13071799f46dc023e37456c",
+ "operational_retries": 2,
+ "operator_subset": [
+  "select",
+  "project",
+  "inner_equijoin",
+  "left_outer_equijoin",
+  "group_by_count_sum_avg_min_max",
+  "distinct",
+  "per_partition_topk"
+ ],
+ "oracles": [
+  "O1_clean_rebuild",
+  "O2_path_vs_path",
+  "O3_duckdb_reference",
+  "O4_per_step_continuation"
+ ],
+ "output_schemas": {
+  "unit_result": "cutwitness-c/unit/1",
+  "verdict": "cutwitness-c/verdict/1",
+  "witness": "cutwitness-c/witness/1"
+ },
+ "pilot": {
+  "budget": {
+   "kind": "executions",
+   "value": 6
+  },
+  "signals": {
+   "A": 1,
+   "B_a12": 0.71,
+   "B_speedup": 2.0,
+   "D_coverage_ratio": 3.0
+  },
+  "targets": [
+   "pg_ivm"
+  ],
+  "tools": [
+   "cutwitness_c",
+   "baseline_random_clean"
+  ],
+  "trials": 1,
+  "workloads": [
+   "W3"
+  ]
+ },
+ "release_state": "ENGINEERING",
+ "resources": {
+  "configured_max_slots": 1,
+  "per_trial_cpus": 1,
+  "per_trial_ram_gb": 1,
+  "port_base": 41000
+ },
+ "rho": 0.1,
+ "schema_version": "cutwitness-c/1",
+ "scientific_freeze_digest": "e3ca733c3dd94ae1249f96bee4bf1ca80d119d84ff9a588289d793e4044fe035",
+ "server_requirements": {
+  "cpus": 1,
+  "disk_gb": 1,
+  "ram_gb": 1
+ },
+ "sta_version": "sta/1",
+ "statistics": {
+  "alpha": 0.05,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 0,
+  "censoring": "time to first candidate right-censored at budget",
+  "effect_sizes": [
+   "A12",
+   "ratio_of_medians"
+  ],
+  "mann_whitney": "two-sided asymptotic, continuity and tie corrected",
+  "multiplicity": "Holm over CutWitness-C vs each baseline per target",
+  "survival": "Kaplan-Meier",
+  "survival_test": "log-rank"
+ },
+ "targets": {
+  "pg_ivm": {
+   "fault": "F9_LATENT_RESIDUAL",
+   "image": "none",
+   "kind": "simulated",
+   "version": {
+    "pg_ivm": "1.16",
+    "server_version_num": "170010"
+   }
+  }
+ },
+ "tester_conformance": {
+  "correct_histories": 5,
+  "fault_histories": 1,
+  "seed": "cutwitness-c/S5-sim",
+  "seeded_faults": [
+   "F2_LOST_DELETE",
+   "F9_LATENT_RESIDUAL"
+  ]
+ },
+ "timeouts": {
+  "barrier_s": 600,
+  "compile_s": 1800,
+  "lifecycle_s": 600,
+  "pull_s": 3600,
+  "ready_s": 300,
+  "sql_s": 120,
+  "stop_s": 60
+ },
+ "transformations": {
+  "append_continuation": "CONTINUATION",
+  "coalesce": "SOUND_TERMINAL_EQUIVALENCE",
+  "insert_lifecycle": "LIFECYCLE_INSERTION",
+  "inverse_detour": "SOUND_TERMINAL_EQUIVALENCE",
+  "move_lifecycle": "LIFECYCLE_INSERTION",
+  "recurrence_detour": "SOUND_TERMINAL_EQUIVALENCE",
+  "reorder": "SOUND_TERMINAL_EQUIVALENCE",
+  "seed_diversify": "HEURISTIC_TEST_MUTATION",
+  "split": "SOUND_TERMINAL_EQUIVALENCE"
+ },
+ "triage": {
+  "candidate_requires": {
+   "nondet_reruns_identical": 10,
+   "o3_agrees_with_reference": true,
+   "reproductions": 2
+  },
+  "order": [
+   "INFRASTRUCTURE_ERROR",
+   "UNSUPPORTED_SEMANTICS",
+   "TARGET_NONDETERMINISM",
+   "CANONICALIZATION",
+   "REFERENCE_MODEL_BUG",
+   "EXPECTED",
+   "LIFECYCLE_RECOVERY_BUG",
+   "TARGET_MAINTENANCE_BUG"
+  ]
+ },
+ "upgrade_pairs": {
+  "note": "UPGRADE excluded: every target runs its newest pinned release; no newer pinned release exists"
+ },
+ "w1_token_env": "CUTWITNESS_W1_TOKEN",
+ "witness_closure": {
+  "min_budget": 20
+ },
+ "workloads": {
+  "W3": {
+   "txns": 5
+  }
+ }
+}

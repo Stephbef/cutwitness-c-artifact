@@ -1,0 +1,23 @@
+# Secrets / local state
+.env
+.env.*
+*.pem
+*.key
+*.token
+secrets/
+
+# Local campaign execution directories are not committed by default.
+# Add a sealed, intentionally reviewed export under results/ when ready.
+runs/
+artifact/authoritative_v1_7_2/runs/
+
+# Python/build noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp

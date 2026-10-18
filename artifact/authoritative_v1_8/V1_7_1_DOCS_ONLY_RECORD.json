@@ -1,0 +1,25 @@
+{
+ "active_source_digest": "0b237d8069b5a9f5892e54fc73683218c1399029d5c46ebf1fc397010ac1bdff",
+ "base_package_sha256": "1e7680d71c76d6a683991560009e906c7e0f85636593b29d5a2d7c05e208a23b",
+ "classification": "V1.7.1 DOCUMENTATION-ONLY UPDATE of V1.7 (no scientific or behavioural change)",
+ "files_changed": [
+  "README_FIRST.md",
+  "SCIENTIFIC_FREEZE.md",
+  "TITLE_AND_PROTOCOL_NOTICE.md (new)",
+  "V1_7_1_DOCS_ONLY_RECORD.json (new)",
+  "manifests/*",
+  "SHA256SUMS"
+ ],
+ "manifest_active_source": "0b237d8069b5a9f5892e54fc73683218c1399029d5c46ebf1fc397010ac1bdff",
+ "sealed_docs_left_unchanged": [
+  "science/SCIENTIFIC_FREEZE_CUTWITNESS_C.md (hash in FROZEN_CAMPAIGN.yaml)",
+  "SCIENTIFIC_AMENDMENT_v1_4.md (hash in FROZEN_CAMPAIGN.yaml)"
+ ],
+ "unchanged": {
+  "code_digest": true,
+  "configs": true,
+  "matrix": true,
+  "tests": true,
+  "tools": true
+ }
+}

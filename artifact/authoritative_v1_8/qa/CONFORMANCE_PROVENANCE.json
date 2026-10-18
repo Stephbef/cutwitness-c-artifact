@@ -1,0 +1,49 @@
+{
+ "adapter": "cutwitness.adapters.feldera.FelderaAdapter",
+ "classification": "MOCK_CONFORMANCE",
+ "counts_toward_real_target_gate": false,
+ "differing_rows": {
+  "v_group": {
+   "engine_only": [
+    [
+     "3",
+     "3",
+     "Decimal('7.0000')",
+     "'AVG_MISMATCH:2.3333333333333335'",
+     "Decimal('1.0000')"
+    ]
+   ],
+   "reference_only": [
+    [
+     "3",
+     "3",
+     "Decimal('7')",
+     "Decimal('2.333333')",
+     "Decimal('1')"
+    ]
+   ]
+  }
+ },
+ "differing_views": [
+  "v_group"
+ ],
+ "fix_commit": "3c64309327923fe4ac93f1e7d5b7405fb10a06aa closure suites, real-target deployment path, offline wheelhouse, one-shot wrapper, crash matrix",
+ "fixed": true,
+ "incremental_equals_clean_rebuild": true,
+ "note": "Protocol-mock evidence only. No real Feldera, pg_ivm or RisingWave has been executed in this environment.",
+ "post_fix_checks_ok": true,
+ "pre_fix_failed_checks": [
+  "incremental_equals_reference",
+  "clean_rebuild_equals_reference"
+ ],
+ "real_target_identity": null,
+ "reference_equals_duckdb_O3": true,
+ "reference_or_duckdb_wrong": false,
+ "regression_tests": [
+  "tests/test_regressions.py::test_regression_2_avg_canonicalization_and_exact_types",
+  "qa/MOCK_CONFORMANCE.json (seed 14 included in the 30-seed sweep)"
+ ],
+ "root_cause": "adapter defect: FelderaAdapter._parse converted a JSON binary AVG (DuckDB DOUBLE in the mock) to Decimal, so the binary-AVG tolerance rule was skipped and a correct AVG was canonicalized as AVG_MISMATCH",
+ "seed": 14,
+ "target": "feldera (protocol mock: cutwitness.adapters.mocks.MockFeldera, DuckDB-backed)"
+}

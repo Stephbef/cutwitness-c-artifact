@@ -1,0 +1,25 @@
+{
+ "amendment_commit": "b6fd677ed11945d808c9a4bd6e038d350c8925c9",
+ "base_commit": "272032706bd0da00eb3937b485d9598d68efa958",
+ "classification": "PRE-EXECUTION EVIDENCE-CLASSIFICATION AMENDMENT v1.2 (latent attribution)",
+ "documents": {
+  "adjudication_protocol_v2": "1bb0a3de94de751da4232665a8cd0876c99402943d0b178b50df7c1e09353136",
+  "amendment": "53ae3c41721450b280e9ec305b1094ed6d69c6090538e21a24ca582e840a59a5",
+  "analysis_spec_v3": "7ecdc4777bb390be24e2f5f9d2554b8b8575868ac1232525254c04d58526ef6f"
+ },
+ "engineering_observation": {
+  "label": "ENGINEERING VALIDATION ONLY — NOT SCIENTIFIC RESULTS",
+  "latent_attribution_by_class": {
+   "CONTINUATION_TRIGGERED": 6
+  },
+  "note": "In simulation every latent witness was CONTINUATION_TRIGGERED: the drain-and-probe suffix kills and revives a group by itself, which triggers the seeded death-rebirth fault from any state. The unit test shows the same fault classified HISTORY_CONDITIONED_LATENT when the death occurs in the history and the suffix only probes."
+ },
+ "patch_digest_sha256": "cf545bf600716908c62ee518aadfb5df3388f9fba5a649424b4c705f95d2a5f7",
+ "scientific_amendment_required": false,
+ "search_invariance": {
+  "identical": true,
+  "simulation_results_digest_after": "0b0bb1fd84c224bb112a49579757a8798ef96b80895a8d5b17dcc42d39f08c52",
+  "simulation_results_digest_before": "0b0bb1fd84c224bb112a49579757a8798ef96b80895a8d5b17dcc42d39f08c52",
+  "trial_and_unit_fingerprints": "tests/test_evidence_plumbing.py (44/44, 8/8)"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "amendment_commit": "11254004737139f10e1befd5c007cc95157a2dfe",
+ "base_commit": "2a8180fd7e99b60fa1fcfbde511be58f0ff07958",
+ "campaign_units": 873,
+ "classification": "PRE-EXECUTION AMENDMENT v1.6 \u2014 E3 canonical incremental replay (attribution only)",
+ "documents": {
+  "adjudication_protocol_v4": "72fcd326858421df802cda34725a57a482fcfef991c4f99dadd9b7dfb767d725",
+  "e3_amendment": "21c37d5270bd214d24378e00718efde3dcb8f9eedb57dfa0c5138a34d20a56e8",
+  "e3_contract": "fb2afb0844246bed6960d33fa4b31bbd55e10cc66c4392e51d11eafd818aa955"
+ },
+ "files_changed": [
+  "E3_ATTRIBUTION_AMENDMENT.md",
+  "E3_CANONICAL_REPLAY_CONTRACT.md",
+  "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md",
+  "campaign/CRASHTEST_SIMULATION.yaml",
+  "campaign/ENGINEERING_SIMULATION.yaml",
+  "campaign/FROZEN_CAMPAIGN.yaml",
+  "cutwitness/analysis.py",
+  "cutwitness/attribution.py",
+  "tests/test_e3_attribution.py",
+  "tests/test_evidence_plumbing.py",
+  "tests/test_random_suffix.py",
+  "tools/make_config.py"
+ ],
+ "implementation_diff_sha256": "bebac5180aac3788175e4e8aca6e58eb88f0cd12a368389fbf7242902fd28cce",
+ "matrix_unchanged": true,
+ "open_item": "rho-sampled non-canonical members are not tagged and not compared with their class representative in the frozen search; no rho-sampling falsification outcome can be reported without a behaviour-neutral instrumentation amendment (not authorized in this closure)",
+ "search_invariance": {
+  "attribution_by_class_detail": {
+   "CONTINUATION_TRIGGERED/CONTINUATION_TRIGGERED": 6
+  },
+  "attribution_rows": 6,
+  "e3_columns_present": true,
+  "matrix_csv_unchanged_since_v1_5_2": true,
+  "results": {
+   "byte_identical": true,
+   "files": 110
+  },
+  "rq2b_outputs_identical": true,
+  "v1_5_2_attribution_by_class": {
+   "CONTINUATION_TRIGGERED": 6
+  },
+  "witnesses": {
+   "byte_identical": true,
+   "files": 48
+  }
+ },
+ "tests": {
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "total": 287
+ }
+}

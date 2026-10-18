@@ -1,0 +1,706 @@
+{
+"ablate_no_guidance|F2_LOST_DELETE": {
+"digest": "4f332bd2db7b6885dc9d564bbc5128e3349dc47f2fc75ebdd623fc42831dacef",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_guidance|F8_LIFECYCLE_RESTORE": {
+"digest": "5729635861600d6dc99da88744e86f69d9982d13669f600e24900ea4e8f9cca1",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_guidance|F9_LATENT_RESIDUAL": {
+"digest": "97600cdbb9eb5e6594a33bd208b4b542a85aa58e319785e054ff81593ceb8d66",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_guidance|NONE": {
+"digest": "42782773bfe9db9b2b8f842ec31269799a87f1f990f6ab1470f8d8d51eb74164",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_reduction|F2_LOST_DELETE": {
+"digest": "43cf0187a1e1c41850aeebbf504dbf13b0765d1c9e2d93da778f754ac3899c1e",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_reduction|F8_LIFECYCLE_RESTORE": {
+"digest": "60c8b2ac6295e2276dbeb6b8d8bb207264cec9a7180f84874fea1a38209e3bd4",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_reduction|F9_LATENT_RESIDUAL": {
+"digest": "4105e093cb24a3e1142cd20e759e47f8ded66ad3b9eb4113d2d31c4fe57b0f2f",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_reduction|NONE": {
+"digest": "33af273ae51dc594ac18dbb851f29cf8350880e67db433f3912290524007d88f",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_suffix|F2_LOST_DELETE": {
+"digest": "9730c0d5678a4979e64966e04f7d83cf977907fada34f1ff070a584e9f92db61",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_suffix|F8_LIFECYCLE_RESTORE": {
+"digest": "33f312a4af3431747b6012fbed9165968952528d8810f64cc5a5a48640e0b3ec",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_suffix|F9_LATENT_RESIDUAL": {
+"digest": "ab51fd24e03e62dd10b9ae784e9b574ddad013f47939b684a9c76abc45c22567",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_no_suffix|NONE": {
+"digest": "ab51fd24e03e62dd10b9ae784e9b574ddad013f47939b684a9c76abc45c22567",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_random_lifecycle|F2_LOST_DELETE": {
+"digest": "31ace02ef5858c2a1ea5d0f668fdc3b4c6babbe37e424fdeed632d2017f58e32",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_random_lifecycle|F8_LIFECYCLE_RESTORE": {
+"digest": "6fd7c5ab914c4ae9444b7ac328a36e472cdfb3e6dfa2d19def463f765d2d88e7",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_random_lifecycle|F9_LATENT_RESIDUAL": {
+"digest": "aa2ec6fca0bd181e18fcc4c7598983a63beebc62c3bce0a86d30cb1236e9fc7c",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"ablate_random_lifecycle|NONE": {
+"digest": "6fd7c5ab914c4ae9444b7ac328a36e472cdfb3e6dfa2d19def463f765d2d88e7",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_clean|F2_LOST_DELETE": {
+"digest": "1f3d4dea669c6d0d1817bb0966b155de6d753edd88c69aae096c1e5e47c45ef6",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_clean|F8_LIFECYCLE_RESTORE": {
+"digest": "1f3d4dea669c6d0d1817bb0966b155de6d753edd88c69aae096c1e5e47c45ef6",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_clean|F9_LATENT_RESIDUAL": {
+"digest": "1f3d4dea669c6d0d1817bb0966b155de6d753edd88c69aae096c1e5e47c45ef6",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_clean|NONE": {
+"digest": "1f3d4dea669c6d0d1817bb0966b155de6d753edd88c69aae096c1e5e47c45ef6",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_te|F2_LOST_DELETE": {
+"digest": "2faadc2664f99f47af96571900fa1296bbdb7f0823331ea5a9bd7ef06e86e061",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_te|F8_LIFECYCLE_RESTORE": {
+"digest": "cdbca0050439490c3e2994332884af9c13f30583481d38a273ff4d45e4fca55c",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_te|F9_LATENT_RESIDUAL": {
+"digest": "37f25204acf3b76503b188c791d0cea000aced86b2a65dbd7871778f367d2967",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_random_te|NONE": {
+"digest": "cdbca0050439490c3e2994332884af9c13f30583481d38a273ff4d45e4fca55c",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_source_por|F2_LOST_DELETE": {
+"digest": "a9aaa6eb5a84976b6df5d3d11f2b567c70655ec211ef9f62d3478a3ea5118aee",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_source_por|F8_LIFECYCLE_RESTORE": {
+"digest": "548c155cafc71474cae427bf34de00a51077db436dddc04866fb864b23d531c2",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_source_por|F9_LATENT_RESIDUAL": {
+"digest": "7845c78efcb5ccb7bc8e6a803b0c2740a53ee4b0e5b6e3885d3f79644380a0f1",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_source_por|NONE": {
+"digest": "548c155cafc71474cae427bf34de00a51077db436dddc04866fb864b23d531c2",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_stateful_fuzz|F2_LOST_DELETE": {
+"digest": "b7f8332660c007cb11461930a40967d6eef9f68f63ee837cbba969158977d39c",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_stateful_fuzz|F8_LIFECYCLE_RESTORE": {
+"digest": "5e55f1d4c04451727dff75274b66b49d051f30b6b1fcaa9e0864a8bd1ee66ca2",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_stateful_fuzz|F9_LATENT_RESIDUAL": {
+"digest": "5e55f1d4c04451727dff75274b66b49d051f30b6b1fcaa9e0864a8bd1ee66ca2",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_stateful_fuzz|NONE": {
+"digest": "5e55f1d4c04451727dff75274b66b49d051f30b6b1fcaa9e0864a8bd1ee66ca2",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_tlp|F2_LOST_DELETE": {
+"digest": "51a32339687b4537c347c3807db89967527b3781b875fd8e43d7b38d5ca8df9d",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_tlp|F8_LIFECYCLE_RESTORE": {
+"digest": "51a32339687b4537c347c3807db89967527b3781b875fd8e43d7b38d5ca8df9d",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_tlp|F9_LATENT_RESIDUAL": {
+"digest": "51a32339687b4537c347c3807db89967527b3781b875fd8e43d7b38d5ca8df9d",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_tlp|NONE": {
+"digest": "51a32339687b4537c347c3807db89967527b3781b875fd8e43d7b38d5ca8df9d",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_zippy|F2_LOST_DELETE": {
+"digest": "562edefa87b9c6f11506ef20995535fd646bf74231597cd90f30f070b24335b2",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_zippy|F8_LIFECYCLE_RESTORE": {
+"digest": "56c4efe0ba50042051aa1220c0cfe07d3edfa97d75e0fab0fcadec48655a87b7",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_zippy|F9_LATENT_RESIDUAL": {
+"digest": "59529d85b307dfeeeff9d431afd61c7986a5b336dfa07ae8e5cac53d0f6d48f7",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"baseline_zippy|NONE": {
+"digest": "56c4efe0ba50042051aa1220c0cfe07d3edfa97d75e0fab0fcadec48655a87b7",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"cutwitness_c|F2_LOST_DELETE": {
+"digest": "da5845e34b27dad44ca0a0e88b1ad8ff6ce4abe4293d0040de8b3c62b454b831",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"cutwitness_c|F8_LIFECYCLE_RESTORE": {
+"digest": "2ca652de488844a2cd53f3dd05d2b79c7b839e2f315b515784ab6bb4e3b5fa6b",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"cutwitness_c|F9_LATENT_RESIDUAL": {
+"digest": "452643f10b2f24293deebd6a4d7a820a3133fb6a9525049e37cd49a7bd5ba9cc",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+},
+"cutwitness_c|NONE": {
+"digest": "293b98e19cb728c0a50f8327336a5310c0ec0ed817b8914ee78aa2a2782292fd",
+"keys": [
+"budget_kind",
+"censored",
+"classes",
+"coverage",
+"divergences",
+"executions",
+"first_candidate_at",
+"first_divergence_exec",
+"realized_words",
+"tool",
+"unrealizable_words"
+]
+}
+}

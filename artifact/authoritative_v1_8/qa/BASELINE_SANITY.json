@@ -1,0 +1,63 @@
+{
+ "label": "ENGINEERING VALIDATION ONLY — NOT SCIENTIFIC RESULTS",
+ "trials_per_cell": 6,
+ "budget_executions": 10,
+ "detections": {
+  "cutwitness_c": {
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 6,
+   "F4_MINMAX_EXTREMUM": 1,
+   "F8_LIFECYCLE_RESTORE": 6,
+   "F9_LATENT_RESIDUAL": 6
+  },
+  "baseline_random_clean": {
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 6,
+   "F4_MINMAX_EXTREMUM": 3,
+   "F8_LIFECYCLE_RESTORE": 0,
+   "F9_LATENT_RESIDUAL": 6
+  },
+  "baseline_random_te": {
+   "F1_WRONG_MULT": 3,
+   "F2_LOST_DELETE": 3,
+   "F4_MINMAX_EXTREMUM": 0,
+   "F8_LIFECYCLE_RESTORE": 6,
+   "F9_LATENT_RESIDUAL": 6
+  },
+  "baseline_stateful_fuzz": {
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 6,
+   "F4_MINMAX_EXTREMUM": 4,
+   "F8_LIFECYCLE_RESTORE": 5,
+   "F9_LATENT_RESIDUAL": 5
+  },
+  "baseline_zippy": {
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 6,
+   "F4_MINMAX_EXTREMUM": 3,
+   "F8_LIFECYCLE_RESTORE": 6,
+   "F9_LATENT_RESIDUAL": 5
+  },
+  "baseline_source_por": {
+   "F1_WRONG_MULT": 3,
+   "F2_LOST_DELETE": 3,
+   "F4_MINMAX_EXTREMUM": 0,
+   "F8_LIFECYCLE_RESTORE": 5,
+   "F9_LATENT_RESIDUAL": 6
+  },
+  "ablate_random_suffix": {
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 6,
+   "F4_MINMAX_EXTREMUM": 3,
+   "F8_LIFECYCLE_RESTORE": 6,
+   "F9_LATENT_RESIDUAL": 6
+  },
+  "ablate_no_suffix": {
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 5,
+   "F4_MINMAX_EXTREMUM": 1,
+   "F8_LIFECYCLE_RESTORE": 6,
+   "F9_LATENT_RESIDUAL": 6
+  }
+ }
+}

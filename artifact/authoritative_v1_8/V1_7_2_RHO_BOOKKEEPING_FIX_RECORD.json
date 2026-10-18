@@ -1,0 +1,46 @@
+{
+ "active_source_digest": "9bd7bf1fbb5836ccec4ad135d014a1c29dd3761084c8171b2bdd7316ee81fc60",
+ "base": "V1.7.1 (981bb1f0eeb85fbdcf9efeccfb98fd2dfae625e86a61d24a162939e9525fc2ea)",
+ "classification": "V1.7.2 EVIDENCE-PRODUCER CORRECTNESS FIX (rho bookkeeping keyed by history digest instead of id()); observation only",
+ "defect": "id() of freed candidate tuples is reused; sampled executions were recorded only on address coincidence, so counts depended on memory layout",
+ "files_changed": [
+  "EQUIVALENCE_SAMPLING_INSTRUMENTATION_AMENDMENT_v1.md",
+  "README_FIRST.md",
+  "SCIENTIFIC_FREEZE.md",
+  "SHA256SUMS",
+  "TITLE_AND_PROTOCOL_NOTICE.md",
+  "V1_7_1_DOCS_ONLY_RECORD.json",
+  "campaign/CRASHTEST_SIMULATION.yaml",
+  "campaign/ENGINEERING_SIMULATION.yaml",
+  "campaign/FROZEN_CAMPAIGN.yaml",
+  "cutwitness/pipeline.py",
+  "manifests/PREEXECUTION_MANIFEST.json",
+  "tests/test_rho_instrumentation.py"
+ ],
+ "local_effect": "engineering validation 43/6/4 (V1.7, layout-dependent) -> 43/3/1 (V1.7.2, layout-independent)",
+ "tests": {
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "total": 307
+ },
+ "zero_search_semantics": {
+  "V1_6": {
+   "execution_logs_identical": true,
+   "results_identical_except_rho_field": true,
+   "rq2b_identical": true,
+   "unit_ids_identical": true,
+   "witnesses_byte_identical": true
+  },
+  "V1_7": {
+   "execution_logs_identical": true,
+   "results_identical_except_rho_field": true,
+   "rho_records_identical": true,
+   "rq2b_identical": true,
+   "unit_ids_identical": true,
+   "witnesses_byte_identical": true
+  },
+  "ZERO_SEARCH_SEMANTICS": "HOLDS",
+  "campaign_matrix_unchanged_since_V1_7": true
+ }
+}

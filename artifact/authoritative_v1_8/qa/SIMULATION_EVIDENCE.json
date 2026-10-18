@@ -1,0 +1,83 @@
+{
+ "S5_tester_conformance": {
+  "detected": {
+   "F10_CROSS_KEY_OUT_OF_MODEL": 2,
+   "F11_NONDETERMINISM": 0,
+   "F1_WRONG_MULT": 6,
+   "F2_LOST_DELETE": 6,
+   "F3_DUP_INSERT_LATENT": 6,
+   "F4_MINMAX_EXTREMUM": 6,
+   "F5_DISTINCT_DUPCOUNT_LATENT": 6,
+   "F6_OUTER_PAD": 6,
+   "F7_TOPK_REFILL": 6,
+   "F8_LIFECYCLE_RESTORE": 6,
+   "F9_LATENT_RESIDUAL": 6,
+   "N1_ALTERNATING": 0,
+   "N2_PERIODIC": 0,
+   "N3_FIRST_NINE_EQUAL": 0,
+   "N4_BURSTY": 0
+  },
+  "false_divergences": 0,
+  "fault_histories": 6,
+  "nondeterminism_candidates": 0,
+  "ok": true,
+  "stage": "S5",
+  "ts": "2026-10-18T04:08:45.902051Z",
+  "unrealized": {
+   "F10_CROSS_KEY_OUT_OF_MODEL": 0,
+   "F11_NONDETERMINISM": 0,
+   "F1_WRONG_MULT": 0,
+   "F2_LOST_DELETE": 0,
+   "F3_DUP_INSERT_LATENT": 0,
+   "F4_MINMAX_EXTREMUM": 0,
+   "F5_DISTINCT_DUPCOUNT_LATENT": 0,
+   "F6_OUTER_PAD": 0,
+   "F7_TOPK_REFILL": 0,
+   "F8_LIFECYCLE_RESTORE": 0,
+   "F9_LATENT_RESIDUAL": 0,
+   "N1_ALTERNATING": 0,
+   "N2_PERIODIC": 0,
+   "N3_FIRST_NINE_EQUAL": 0,
+   "N4_BURSTY": 0
+  }
+ },
+ "all_executable_committed": true,
+ "candidates_by_sim_target": {
+  "feldera": 30,
+  "pg_ivm": 39
+ },
+ "committed_units": 119,
+ "config_digest": "a6e5f4a84e163cae416a5e5398562a8f36f26331fccda6ba71244391b07e2d0f",
+ "correct_sim_target_candidates": 0,
+ "duplicate_commits": false,
+ "failed_operational": 0,
+ "journal_head": "dbef5e8f297890c49777ebada6000ea7b4842b61635ec76ba857af998ceeb1b1",
+ "label": "ENGINEERING VALIDATION ONLY — NOT SCIENTIFIC RESULTS",
+ "latent_attribution_by_class": {
+  "CONTINUATION_TRIGGERED": 6
+ },
+ "not_applicable_planned": 2,
+ "not_applicable_units_journaled": 2,
+ "note": "Simulated targets run the toy engine behind each real target's frozen capability matrix. Nothing here is a result about pg_ivm, Feldera or RisingWave.",
+ "pilot_decision": "GO",
+ "planned_executable_units": 119,
+ "results_digest": "0974915f985bd32f0122184bfa801653248dc7061783acd201716fc824c5b2af",
+ "seeded_fault_by_sim_target": {
+  "feldera": "F2_LOST_DELETE",
+  "pg_ivm": "F9_LATENT_RESIDUAL",
+  "risingwave": "NONE"
+ },
+ "stages_completed": [
+  "S10",
+  "S11",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S7",
+  "S8"
+ ],
+ "tlp_secondary_units_committed": 9,
+ "verdict": "COMPLETE_FULL_CAMPAIGN"
+}

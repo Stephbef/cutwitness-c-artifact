@@ -1,0 +1,32 @@
+{
+ "amendment_commit": "28d804beb3aa120e2c7bf776433c218348501b0b",
+ "base_commit": "e8a9a9b6a53d0e588e808fa45239038c2d19f88e",
+ "classification": "PRE-EXECUTION ANALYSIS AMENDMENT v1.3 (interpretation only)",
+ "defects_corrected": [
+  "ablate_no_suffix (and every suffix-free arm) cannot emit a latent witness or latent-only TTFD by construction; the Patch-2 family made that endpoint its primary inferential metric",
+  "the no-suffix latent survival curve was produced next to CutWitness-C's",
+  "packaged qa/junit.xml (196 tests, 1 failure) and TEST_REPORT.md (189 tests) did not describe the V1.2 tree"
+ ],
+ "related_structural_observation": "No search baseline executes a suffix, so the latent branch of pilot signal C reflects a capability difference; the frozen rule is unchanged and is never reported as comparative evidence.",
+ "scientific_amendment_required": false,
+ "search_invariance": {
+  "identical_to_v1_2": true,
+  "simulation_results_digest": "0b0bb1fd84c224bb112a49579757a8798ef96b80895a8d5b17dcc42d39f08c52"
+ },
+ "spec": {
+  "path": "science/ANALYSIS_SPEC_v4.md",
+  "sha256": "fd9a995dd30adcf871e2c99c3eb49f428e89c86cd2a1a1571652952db534c934"
+ },
+ "unchanged": [
+  "search",
+  "candidate generation",
+  "target execution",
+  "campaign units",
+  "seeds",
+  "budgets",
+  "treatment",
+  "target versions",
+  "pilot rules",
+  "guidance/reduction/placement families"
+ ]
+}

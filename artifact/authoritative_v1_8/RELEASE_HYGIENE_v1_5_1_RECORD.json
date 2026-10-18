@@ -1,0 +1,53 @@
+{
+ "analysis_spec_v6_sha256": {
+  "after": "3504a82d986ce483250421630cdbadb1391709885117599b737f502d776de6c9",
+  "before": "3451aa338b91c68e"
+ },
+ "base_commit": "b2e6d85406655d96b113f914ff6be074648711f1",
+ "classification": "RELEASE HYGIENE v1.5.1 (documentation / configuration consistency only)",
+ "config_digest_change": "unavoidable: mirrors synchronized and spec text clarified; matrix.* unchanged",
+ "crash_reference_digest_unchanged": true,
+ "hygiene_commit": "5fdef55a51a78f4230181dcac0172cd37fe345ae",
+ "simulation_results_digest_unchanged": true,
+ "tests": {
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "total": 266
+ },
+ "zero_behavior_proof": {
+  "CAMPAIGN_MATRIX": {
+   "csv_bytes_unchanged": true,
+   "semantically_identical": true,
+   "units_new": 873,
+   "units_old": 873
+  },
+  "differing_run_files": [
+   "FINAL_VERDICT.json",
+   "final_manifest.json",
+   "preseal/CAMPAIGN_PREFLIGHT_REPORT.txt",
+   "preseal/S1_fingerprint.json",
+   "run_meta.json"
+  ],
+  "results": {
+   "byte_identical": true,
+   "files": 110
+  },
+  "rq2b_matched_pairs.csv": {
+   "rows": 9,
+   "semantically_identical": true
+  },
+  "rq2b_matched_summary.csv": {
+   "rows": 3,
+   "semantically_identical": true
+  },
+  "rq2b_matched_timing.csv": {
+   "rows": 3,
+   "semantically_identical": true
+  },
+  "witnesses": {
+   "byte_identical": true,
+   "files": 48
+  }
+ }
+}

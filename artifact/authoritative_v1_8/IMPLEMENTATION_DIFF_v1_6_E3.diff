@@ -1,0 +1,492 @@
+diff --git a/E3_ATTRIBUTION_AMENDMENT.md b/E3_ATTRIBUTION_AMENDMENT.md
+new file mode 100644
+index 0000000..8b8b072
+--- /dev/null
++++ b/E3_ATTRIBUTION_AMENDMENT.md
+@@ -0,0 +1,24 @@
++# Pre-Execution Amendment v1.6 — E3 Canonical Incremental Replay (attribution only)
++
++Status: issued before any real execution.
++Base: server package V1.5.2 (`b09fadb3…`), commit `2a8180f`.
++
++**Why.** The adversarial PC review (R4-W3) showed that the history-conditioned (HC) label rests on E1-fail / E2-pass. E2 loads src(h)
++in one bulk transaction and may exercise an initialization path that differs from incremental maintenance.
++
++**Change.**
++- Add E3, the canonical incremental replay (E3_CANONICAL_REPLAY_CONTRACT.md).
++- HC now requires E2 **and** E3 to pass; CT requires both to fail.
++- E2/E3 disagreement is UNRESOLVED (PATH_CONSTRUCTION_SENSITIVE).
++- Adjudication protocol v4 adds Section J′ (this rule) and Section M (witness-to-root merge decisions recorded separately from class labels).
++
++**Unchanged.** Search, candidate generation, triage, all campaign units (873), the matrix, seeds, budgets, treatments, the pilot, every
++analysis family and the RQ structure. Attribution remains descriptive (RQ2a); no inferential test uses it.
++
++**Decision rule (unchanged in spirit).** The HC count is reported with both reconstructions shown. A root with any
++PATH_CONSTRUCTION_SENSITIVE witness is not counted as HC.
++
++**Not authorized here (recorded as an open item).** The frozen search does not tag ρ-sampled non-canonical members, nor compare them
++with their class representative. The manuscript therefore reports no ρ-sampling falsification outcome, and the claim that an
++intra-class divergence is "a witness of out-of-model behavior" is withdrawn. A behaviour-neutral instrumentation amendment would be
++needed to report it.
+diff --git a/E3_CANONICAL_REPLAY_CONTRACT.md b/E3_CANONICAL_REPLAY_CONTRACT.md
+new file mode 100644
+index 0000000..0615975
+--- /dev/null
++++ b/E3_CANONICAL_REPLAY_CONTRACT.md
+@@ -0,0 +1,24 @@
++# E3 Canonical Incremental Replay — Contract (Amendment v1.6)
++
++**Purpose.** Separate "the original incremental path matters" from "the bulk-load/initialization path differs from the incremental path".
++E2 alone cannot do this, because loading src(h) in one transaction can exercise a different engine path.
++
++**Definition.** E3 = a fresh instance; apply `canonical_history(schema, h)`; check the final cut (O1); apply the same continuation c,
++checking every step (O4); repeat `nondet_reruns` times; replays must be identical.
++
++**Canonical history** (`cutwitness/attribution.py: canonical_history`):
++- reaches exactly src(h) (checked);
++- inserts only, one row per transaction, ordinary incremental transactions;
++- tables in schema order (parents before children), rows in canonical sorted order, so every prefix satisfies keys and foreign keys (checked);
++- no lifecycle actions;
++- deterministic: a pure function of src(h), independent of the target's hidden state;
++- does not reproduce h: if the canonical sequence equals h's transaction sequence, rows are emitted in reverse order within each table;
++  if it still coincides, attribution is UNRESOLVED ("canonical reconstruction coincides with the original history").
++
++**Scope.** Post-witness replay at S8 only, on reproducible continuation-latent witnesses.
++- No campaign unit is added, and search, candidate discovery, triage, seeds, budgets, treatment and the pilot are untouched.
++- `tests/test_e3_attribution.py::test_e3_does_not_touch_search` checks this structurally; the simulation proves it byte-for-byte (results and witnesses identical to v1.5.2).
++
++**Outputs.**
++- `attribution/<witness>.json` (resumable per witness) gains `canonical_path_result`, `canonical_transactions`, `canonical_independent_of_history` and `attribution_detail`.
++- `latent_attribution.csv` carries the same columns.
+diff --git a/ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md b/ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md
+new file mode 100644
+index 0000000..fa389d4
+--- /dev/null
++++ b/ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md
+@@ -0,0 +1,92 @@
++# Root-Cause Adjudication Protocol v4 (pre-registered before any real execution; v3 plus Sections J′ and M)
++
++Status: frozen with Amendment v1.2 (v1 frozen with Patch-2 is kept for provenance); SHA-256 recorded in `campaign/FROZEN_CAMPAIGN.yaml` (`evidence.adjudication_protocol`).
++Root causes are a post-run adjudication layer above witness closure; they are never computed automatically.
++
++## A. Input
++Only **reproduced witnesses** (witness status `NEW` after S8: ten identical re-executions plus closure replay). For each:
++target, workload, operators of the views, triage class, minimized witness (history and suffix), terminal digest, and the raw
++engine and reference observations obtained by replaying the witness (`python3 -m cutwitness.replay`).
++Demoted witnesses (`DEMOTED_NONDETERMINISM`) and non-candidate divergences are excluded.
++
++## B. Unit
++A root cause is one underlying target behaviour. One root cause may map to several witnesses; every witness maps to exactly one
++root cause. A root cause never spans targets.
++
++## C. Grouping rules
++Two witnesses are merged only when evidence supports the **same underlying target behaviour**, e.g. the same per-key operator
++state transition producing the same wrong state, demonstrated by minimized histories that reduce to the same semantic failure.
++A merge is **never** justified solely by: matching operator family; matching error text; matching lifecycle event; similar-looking
++output differences.
++
++## D. Required evidence per decision
++For every merge or split record: witness IDs; the semantic failure (expected vs observed state or output); the minimal histories;
++operator and key evidence (which operator, which key, which transition); relation to lifecycle events (none / required / incidental);
++reproduction evidence (replay result); written rationale. Merges additionally fill `merge_evidence`.
++
++## E. Blindness
++Adjudicate from `analysis/.../adjudication_worksheet.csv`, which carries no method identity. Open `witness_method_map.csv` only after
++every root cause is fixed, and use it only to compute detection overlap (methods_detecting).
++
++## F. Tie-breaking
++If uncertain: **keep separate and mark `UNRESOLVED_KEPT_SEPARATE`**. Never force a merge. Unresolved rows are reported as such.
++
++## G. Output
++`root_cause_adjudication_ledger.csv` with columns
++`root_cause_id, witness_ids (;-separated), target, workload, operator, primary_class (final-cut | path-convergence |
++latent-continuation | lifecycle-sensitive), latent (true/false), lifecycle_annotation, adjudication_basis, merge_evidence,
++methods_detecting, confidence_status (ADJUDICATED | UNRESOLVED_KEPT_SEPARATE), latent_attribution (HISTORY_CONDITIONED_LATENT | CONTINUATION_TRIGGERED | UNRESOLVED_ATTRIBUTION | NOT_LATENT), adjudicator_A_class, adjudicator_B_class, agreement (AGREE | DISAGREE), resolution, adjudicator_independence (AUTHORS_ONLY | INCLUDES_EXTERNAL)`.
++Validated by `python3 -m cutwitness.adjudication validate <ledger.csv> <witnesses_dir> [external_report_ledger.csv]`.
++
++## H. External reports
++Developer issue status lives only in `external_report_ledger.csv`
++(`report_id, root_cause_ids, target, tracker_reference, status, status_date, note`). Reports reference existing root causes and can
++never create, merge or remove a scientific root cause; status changes do not alter scientific counts.
++
++## I. Who and when
++Adjudication starts after S12 of the frozen campaign. Two adjudicators work independently on the blind worksheet; disagreements
++are resolved by keeping the witnesses separate (rule F). The ledger is hashed and archived with the run before any manuscript number
++is replaced.
++
++## J. Latent attribution (Amendment v1.2)
++Every reproducible latent witness carries the S8 attribution record (`attribution/<witness>.json`, `latent_attribution.csv`):
++E1 replays the history and its characterization continuation; E2 loads exactly src(h) into a fresh instance in one transaction and
++applies the same continuation; each path is replayed `nondet_reruns` times and must be identical.
++- A latent root cause is **history-conditioned** only if every witness assigned to it is HISTORY_CONDITIONED_LATENT.
++- If any witness is CONTINUATION_TRIGGERED, the root cause is recorded as CONTINUATION_TRIGGERED: still a latent-continuation
++  failure (the current-cut PASS did not certify the continuation), but no claim is made that the history corrupted state.
++- UNRESOLVED_ATTRIBUTION witnesses make the root cause UNRESOLVED_ATTRIBUTION; they are never upgraded by argument.
++- Claims of corrupted, path-dependent or history-left persistent state are made **only** for HISTORY_CONDITIONED_LATENT roots.
++- Non-latent roots carry NOT_LATENT.
++
++## K. Two adjudicators (Amendment v1.4)
++- Two adjudicators classify every root independently from the blind worksheet: `adjudicator_A_class`, `adjudicator_B_class`.
++- `agreement` is AGREE when both classes equal `primary_class`. Otherwise DISAGREE, and `resolution` records how it was resolved; by rule F, uncertain cases stay separate.
++- Report raw agreement, and Cohen's kappa when at least two categories occur (`cutwitness.adjudication.agreement_stats`).
++- `adjudicator_independence` states honestly whether only authors adjudicated. No external adjudicator is claimed unless one took part.
++- Developer confirmation remains outside root-cause counting.
++
++## L. Root-level comparison terms (RQ2a / RQ2b)
++- **Suffix-stage-specific:** a continuation-latent root found by `cutwitness_c` but not by `ablate_no_suffix` at equal budget.
++- **Characterization-specific:** a latent root found by `cutwitness_c` but not by `ablate_random_suffix` at equal budget.
++- **CW-exclusive:** found by `cutwitness_c` but by none of the five stochastic search baselines.
++- **Baseline-exclusive:** found only by search baselines.
++
++These sets are reported separately and never merged.
++
++## J′. Three-path attribution (Amendment v1.6, supersedes the attribution rule of Section J)
++Every reproducible latent witness is replayed on three paths, each repeated `nondet_reruns` times and required to be identical:
++E1 (original history then c), E2 (fresh instance, src(h) in one bulk transaction, then c), and E3 (fresh instance, src(h) reached by
++the canonical incremental history of `cutwitness.attribution.canonical_history`, then c).
++- **HISTORY_CONDITIONED_LATENT** (detail STRONG_HISTORY_CONDITIONED): E1 fails during c; E2 and E3 both pass c.
++- **CONTINUATION_TRIGGERED**: E1 fails during c; E2 and E3 both fail c. No claim that h corrupted state.
++- **UNRESOLVED_ATTRIBUTION**: E2 and E3 disagree (detail PATH_CONSTRUCTION_SENSITIVE), a reconstruction fails at the cut, the canonical
++  history coincides with h, replays are non-identical, or an error occurs. Both reconstructions are always reported.
++A root is history-conditioned only if all its latent witnesses classified HISTORY_CONDITIONED_LATENT under this rule.
++
++## M. Witness-to-root merge decisions (recorded separately from class labels)
++Before class labelling, each adjudicator records merge decisions for every candidate pair of witnesses on the same target and operator
++family (`root_merge_decisions.csv`: pair_id, witness_a, witness_b, adjudicator_A_merge, adjudicator_B_merge, agreement, resolution).
++Report the number of pair decisions, initial agreement, disagreements and their resolution. Cohen's kappa is reported only if both
++decisions occur in sufficient number to be meaningful. Class-label agreement (Section K) is never presented as validation of merging.
++Both adjudicators are authors unless stated otherwise; method-label blinding does not hide witness shape, and this is acknowledged.
+diff --git a/campaign/CRASHTEST_SIMULATION.yaml b/campaign/CRASHTEST_SIMULATION.yaml
+index 03027c0..bccd68e 100644
+--- a/campaign/CRASHTEST_SIMULATION.yaml
++++ b/campaign/CRASHTEST_SIMULATION.yaml
+@@ -91,7 +91,7 @@
+    }
+   }
+  },
+- "code_tree_digest": "edd39b1f3a594af16e17d442b3927140fa3ab6588780bfa6e3d2d8812c027dfb",
++ "code_tree_digest": "ad916b5fe4f3abbd508ba1a6c416cbe144e5fdf0575f76d54deab255ffda9752",
+  "demotion_rule": "S8 re-executes every candidate nondet_reruns times in fresh sessions; any observation digest differing from the recorded one demotes it to TARGET_NONDETERMINISM",
+  "duration_gate": {
+   "est_bytes_per_unit": 2000000,
+@@ -106,8 +106,8 @@
+  },
+  "evidence": {
+   "adjudication_protocol": {
+-   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v3.md",
+-   "sha256": "bfd40e71e828aba59256920d811d815e4fc310885421a9b3f21e1044e81bffd1"
++   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md",
++   "sha256": "72fcd326858421df802cda34725a57a482fcfef991c4f99dadd9b7dfb767d725"
+   },
+   "amendment_v1_4": {
+    "path": "SCIENTIFIC_AMENDMENT_v1_4.md",
+@@ -118,6 +118,10 @@
+    "replays_per_path": "nondet_reruns",
+    "sha256": "53ae3c41721450b280e9ec305b1094ed6d69c6090538e21a24ca582e840a59a5"
+   },
++  "e3_amendment": {
++   "path": "E3_ATTRIBUTION_AMENDMENT.md",
++   "sha256": "21c37d5270bd214d24378e00718efde3dcb8f9eedb57dfa0c5138a34d20a56e8"
++  },
+   "patch": "Patch-2 pre-execution evidence instrumentation (observation only)",
+   "timing_mode": "logical"
+  },
+diff --git a/campaign/ENGINEERING_SIMULATION.yaml b/campaign/ENGINEERING_SIMULATION.yaml
+index dcf20b1..d1ab601 100644
+--- a/campaign/ENGINEERING_SIMULATION.yaml
++++ b/campaign/ENGINEERING_SIMULATION.yaml
+@@ -129,7 +129,7 @@
+    }
+   }
+  },
+- "code_tree_digest": "edd39b1f3a594af16e17d442b3927140fa3ab6588780bfa6e3d2d8812c027dfb",
++ "code_tree_digest": "ad916b5fe4f3abbd508ba1a6c416cbe144e5fdf0575f76d54deab255ffda9752",
+  "demotion_rule": "S8 re-executes every candidate nondet_reruns times in fresh sessions; any observation digest differing from the recorded one demotes it to TARGET_NONDETERMINISM",
+  "duration_gate": {
+   "est_bytes_per_unit": 2000000,
+@@ -144,8 +144,8 @@
+  },
+  "evidence": {
+   "adjudication_protocol": {
+-   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v3.md",
+-   "sha256": "bfd40e71e828aba59256920d811d815e4fc310885421a9b3f21e1044e81bffd1"
++   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md",
++   "sha256": "72fcd326858421df802cda34725a57a482fcfef991c4f99dadd9b7dfb767d725"
+   },
+   "amendment_v1_4": {
+    "path": "SCIENTIFIC_AMENDMENT_v1_4.md",
+@@ -156,6 +156,10 @@
+    "replays_per_path": "nondet_reruns",
+    "sha256": "53ae3c41721450b280e9ec305b1094ed6d69c6090538e21a24ca582e840a59a5"
+   },
++  "e3_amendment": {
++   "path": "E3_ATTRIBUTION_AMENDMENT.md",
++   "sha256": "21c37d5270bd214d24378e00718efde3dcb8f9eedb57dfa0c5138a34d20a56e8"
++  },
+   "patch": "Patch-2 pre-execution evidence instrumentation (observation only)",
+   "timing_mode": "logical"
+  },
+diff --git a/campaign/FROZEN_CAMPAIGN.yaml b/campaign/FROZEN_CAMPAIGN.yaml
+index 18a3647..d842bb4 100644
+--- a/campaign/FROZEN_CAMPAIGN.yaml
++++ b/campaign/FROZEN_CAMPAIGN.yaml
+@@ -129,7 +129,7 @@
+    }
+   }
+  },
+- "code_tree_digest": "edd39b1f3a594af16e17d442b3927140fa3ab6588780bfa6e3d2d8812c027dfb",
++ "code_tree_digest": "ad916b5fe4f3abbd508ba1a6c416cbe144e5fdf0575f76d54deab255ffda9752",
+  "demotion_rule": "S8 re-executes every candidate nondet_reruns times in fresh sessions; any observation digest differing from the recorded one demotes it to TARGET_NONDETERMINISM",
+  "duration_gate": {
+   "est_bytes_per_unit": 2000000,
+@@ -144,8 +144,8 @@
+  },
+  "evidence": {
+   "adjudication_protocol": {
+-   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v3.md",
+-   "sha256": "bfd40e71e828aba59256920d811d815e4fc310885421a9b3f21e1044e81bffd1"
++   "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md",
++   "sha256": "72fcd326858421df802cda34725a57a482fcfef991c4f99dadd9b7dfb767d725"
+   },
+   "amendment_v1_4": {
+    "path": "SCIENTIFIC_AMENDMENT_v1_4.md",
+@@ -156,6 +156,10 @@
+    "replays_per_path": "nondet_reruns",
+    "sha256": "53ae3c41721450b280e9ec305b1094ed6d69c6090538e21a24ca582e840a59a5"
+   },
++  "e3_amendment": {
++   "path": "E3_ATTRIBUTION_AMENDMENT.md",
++   "sha256": "21c37d5270bd214d24378e00718efde3dcb8f9eedb57dfa0c5138a34d20a56e8"
++  },
+   "patch": "Patch-2 pre-execution evidence instrumentation (observation only)",
+   "timing_mode": "wallclock"
+  },
+diff --git a/cutwitness/analysis.py b/cutwitness/analysis.py
+index 9ee14d9..2565df3 100644
+--- a/cutwitness/analysis.py
++++ b/cutwitness/analysis.py
+@@ -238,7 +238,9 @@ def evidence_outputs(units, cfg, label, budget, w, witnesses):
+                                                    "latent", "lifecycle_kinds", "minimized_length", "terminal_digest", "witness_status", "latent_attribution"]))
+     att = [dict(wi["attribution"]) for wi in sorted(witnesses, key=lambda z: z["id"]) if wi.get("attribution")]
+     w("latent_attribution.csv", _rows_csv(att, ["witness_id", "target", "workload", "final_cut_digest", "continuation_digest",
+-                                                "history_path_result", "fresh_cut_result", "attribution_class", "reason", "replays_per_path"]))
++                                                "history_path_result", "fresh_cut_result", "canonical_path_result", "canonical_transactions",
++                                                "canonical_independent_of_history", "attribution_class", "attribution_detail",
++                                                "reason", "replays_per_path"]))
+     w("witness_method_map.csv", _rows_csv([{"witness_id": wi["id"], "method": wi.get("tool")} for wi in witnesses], ["witness_id", "method"]))
+ 
+ 
+diff --git a/cutwitness/attribution.py b/cutwitness/attribution.py
+index 550e5c5..5d9d2e4 100644
+--- a/cutwitness/attribution.py
++++ b/cutwitness/attribution.py
+@@ -4,8 +4,12 @@ Evidence classification after candidate discovery (stage S8): for every reproduc
+ (FC(h) holds, the characterization continuation c fails), replay
+   E1: h followed by c, and
+   E2: a fresh instance loaded with exactly src(h) in one transaction (no history, no lifecycle), followed by the same c.
+-E1 fails and E2 passes -> HISTORY_CONDITIONED_LATENT (the prior history/lifecycle path matters);
+-E1 fails and E2 fails  -> CONTINUATION_TRIGGERED (real failure; no claim that h corrupted state);
++  E3 (Amendment v1.6): a fresh instance that reaches exactly src(h) through a canonical incremental history (inserts only,
++      parent tables first, rows in canonical order, one row per transaction, independent of h), followed by the same c.
++E1 fails, E2 passes and E3 passes      -> HISTORY_CONDITIONED_LATENT (detail STRONG_HISTORY_CONDITIONED): the original
++                                          incremental path matters beyond both a bulk and a canonical incremental reconstruction;
++E1 fails, E2 fails and E3 fails        -> CONTINUATION_TRIGGERED (real failure; no claim that h corrupted state);
++E2 and E3 disagree                     -> UNRESOLVED_ATTRIBUTION (detail PATH_CONSTRUCTION_SENSITIVE);
+ anything else, or non-identical replays -> UNRESOLVED_ATTRIBUTION.
+ It never influences search, scheduling, treatment, seeds, budgets, triage or pilot criteria.
+ """
+@@ -13,7 +17,7 @@ from __future__ import annotations
+ import json, os
+ from typing import Callable, Dict, List
+ from .campaign import atomic_write
+-from .model import Txn, cjson, history_digest, history_from_canon, sha, src
++from .model import Txn, ZSet, apply_txn, cjson, empty_state, history_digest, history_from_canon, is_txn, legal_state, sha, src
+ from .oracles import judge
+ from .serialize import schema_from_json, views_from_json
+ 
+@@ -27,6 +31,26 @@ def fresh_load(schema, h: List) -> List:
+     return [Txn(delta)] if delta else []
+ 
+ 
++def canonical_history(schema, h: List):
++    """E3 path: src(h) reached through normal incremental insert transactions, deterministic and independent of h.
++    Returns (transactions, independent_of_h, legal_every_prefix)."""
++    x = src(schema, h)
++    def build(rev):
++        rows = []
++        for t in schema.order:                                  # parent tables first (FK legality)
++            rs = [r for r, m in x[t].items_sorted() for _ in range(m)]
++            rows += [(t, r) for r in (list(reversed(rs)) if rev else rs)]
++        return [Txn({t: ZSet([(r, 1)])}) for t, r in rows]
++    orig = [e.canon() for e in h if is_txn(e)]
++    txns = build(False); independent = [t.canon() for t in txns] != orig
++    if not independent:
++        txns = build(True); independent = [t.canon() for t in txns] != orig
++    cur = empty_state(schema); legal = True
++    for t in txns:
++        cur = apply_txn(cur, t); legal = legal and legal_state(schema, cur)[0]
++    return txns, independent, legal and cur == x
++
++
+ def _replay(fac, schema, views, hist, suffix) -> dict:
+     v = judge(fac, schema, views, hist, suffix, use_o3=False)
+     return {"error": v.get("error"), "fc_at_cut": bool(v.get("o1_cut")), "where": v.get("where") if v["diverges"] else "PASS",
+@@ -45,22 +69,40 @@ def attribute(fac: Callable, schema, views, h: List, suffix: List, replays: int)
+     e1 = [_replay(fac, schema, views, h, suffix) for _ in range(replays)]
+     fl = fresh_load(schema, h)
+     e2 = [_replay(fac, schema, views, fl, suffix) for _ in range(replays)]
++    ch, independent, legal = canonical_history(schema, h)
++    e3 = [_replay(fac, schema, views, ch, suffix) for _ in range(replays)] if legal else []
+     k = lambda r: json.dumps(r, sort_keys=True, default=str)
+-    if len({k(r) for r in e1}) > 1 or len({k(r) for r in e2}) > 1:
++    detail = None
++    if len({k(r) for r in e1}) > 1 or len({k(r) for r in e2}) > 1 or len({k(r) for r in e3}) > 1:
+         cls, reason = "UNRESOLVED_ATTRIBUTION", "non-identical replays (nondeterminism)"
+-    elif any(r["error"] for r in e1 + e2):
++    elif any(r["error"] for r in e1 + e2 + e3):
+         cls, reason = "UNRESOLVED_ATTRIBUTION", "infrastructure error during replay"
+     elif not (e1[0]["fc_at_cut"] and str(e1[0]["where"]).startswith("suffix")):
+         cls, reason = "UNRESOLVED_ATTRIBUTION", "history path is not latent on replay"
+     elif not e2[0]["fc_at_cut"]:
+         cls, reason = "UNRESOLVED_ATTRIBUTION", "fresh load of the final cut fails at the cut"
+-    elif e2[0]["where"] == "PASS":
+-        cls, reason = "HISTORY_CONDITIONED_LATENT", "continuation fails only after the history path"
++    elif not legal or not e3:
++        cls, reason = "UNRESOLVED_ATTRIBUTION", "canonical incremental reconstruction of the final cut is not legal"
++    elif not e3[0]["fc_at_cut"]:
++        cls, reason = "UNRESOLVED_ATTRIBUTION", "canonical incremental reconstruction fails at the cut"
++    elif not independent:
++        cls, reason = "UNRESOLVED_ATTRIBUTION", "canonical reconstruction coincides with the original history"
+     else:
+-        cls, reason = "CONTINUATION_TRIGGERED", "continuation also fails from a fresh load of the final cut"
++        p2, p3 = e2[0]["where"] == "PASS", e3[0]["where"] == "PASS"
++        if p2 and p3:
++            cls, detail = "HISTORY_CONDITIONED_LATENT", "STRONG_HISTORY_CONDITIONED"
++            reason = "continuation fails only after the original path; bulk (E2) and canonical incremental (E3) reconstructions pass"
++        elif not p2 and not p3:
++            cls, detail = "CONTINUATION_TRIGGERED", "CONTINUATION_TRIGGERED"
++            reason = "continuation also fails from both clean reconstructions (E2 bulk, E3 canonical incremental)"
++        else:
++            cls, detail = "UNRESOLVED_ATTRIBUTION", "PATH_CONSTRUCTION_SENSITIVE"
++            reason = f"E2 {'passes' if p2 else 'fails'} but E3 {'passes' if p3 else 'fails'}: reconstructions disagree"
+     return {"final_cut_digest": sha(fl[0].canon()) if fl else sha([]), "continuation_digest": history_digest(suffix),
+-            "history_path_result": _summary(e1[0]), "fresh_cut_result": _summary(e2[0]), "attribution_class": cls,
+-            "reason": reason, "replays_per_path": replays}
++            "history_path_result": _summary(e1[0]), "fresh_cut_result": _summary(e2[0]),
++            "canonical_path_result": _summary(e3[0]) if e3 else "NOT_RUN", "canonical_transactions": len(ch),
++            "canonical_independent_of_history": independent, "attribution_class": cls, "attribution_detail": detail or cls,
++            "reason": reason, "replays_per_path": replays, "attribution_protocol": "E1/E2/E3 (Amendment v1.6)"}
+ 
+ 
+ def attribution_closure(cfg: dict, run_dir: str, witnesses: List[dict], make_factory: Callable) -> Dict[str, dict]:
+diff --git a/tests/test_e3_attribution.py b/tests/test_e3_attribution.py
+new file mode 100644
+index 0000000..742150b
+--- /dev/null
++++ b/tests/test_e3_attribution.py
+@@ -0,0 +1,65 @@
++"""Amendment v1.6: E3 canonical incremental replay. Post-witness only; never touches search."""
++import random
++import pytest
++from cutwitness import attribution as AT
++from cutwitness.model import apply_txn, empty_state, is_txn, legal_state, src
++from cutwitness.toyengine import ToyEngine
++from cutwitness.w3 import gen_history, gen_schema, gen_views
++
++
++def _case(seed):
++    rng = random.Random(seed); s = gen_schema(rng); vs = gen_views(rng, s); h = gen_history(rng, s, 8)
++    return s, vs, h
++
++
++@pytest.mark.parametrize("seed", range(12))
++def test_canonical_history_reaches_exactly_src_legally_and_independently(seed):
++    s, vs, h = _case(seed)
++    ch, independent, legal = AT.canonical_history(s, h)
++    assert legal and all(is_txn(t) for t in ch)
++    cur = empty_state(s)
++    for t in ch:
++        assert all(m > 0 for z in t.delta.values() for _, m in z.items_sorted())          # inserts only
++        assert sum(m for z in t.delta.values() for _, m in z.items_sorted()) == 1          # one row per transaction
++        cur = apply_txn(cur, t); assert legal_state(s, cur)[0]                             # every prefix legal
++    assert cur == src(s, h)                                                                # exactly src(h)
++    assert [t.canon() for t in AT.canonical_history(s, h)[0]] == [t.canon() for t in ch]    # deterministic
++    if any(m < 0 for e in h if is_txn(e) for z in e.delta.values() for _, m in z.items_sorted()):
++        assert independent                                                                 # differs from a history with deletions
++
++
++@pytest.mark.parametrize("e2,e3,cls,detail", [(True, True, "HISTORY_CONDITIONED_LATENT", "STRONG_HISTORY_CONDITIONED"),
++                                               (False, False, "CONTINUATION_TRIGGERED", "CONTINUATION_TRIGGERED"),
++                                               (True, False, "UNRESOLVED_ATTRIBUTION", "PATH_CONSTRUCTION_SENSITIVE"),
++                                               (False, True, "UNRESOLVED_ATTRIBUTION", "PATH_CONSTRUCTION_SENSITIVE")])
++def test_e3_decision_table(monkeypatch, e2, e3, cls, detail):
++    s, vs, h = _case(3)
++    fl = [t.canon() for t in AT.fresh_load(s, h)]
++    def fake(fac, schema, views, hist, suffix):
++        if hist is h:
++            where = "suffix@1"
++        elif [t.canon() for t in hist] == fl:
++            where = "PASS" if e2 else "suffix@1"
++        else:
++            where = "PASS" if e3 else "suffix@1"
++        return {"error": None, "fc_at_cut": True, "where": where, "obs": "o", "steps": []}
++    monkeypatch.setattr(AT, "_replay", fake)
++    r = AT.attribute(None, s, vs, h, [], 3)
++    assert (r["attribution_class"], r["attribution_detail"]) == (cls, detail)
++    assert r["canonical_path_result"] != "NOT_RUN" and r["attribution_protocol"].startswith("E1/E2/E3")
++
++
++def test_e3_on_real_toy_faults_history_and_continuation():
++    """History-conditioned residual stays history-conditioned under E3; the delete-path defect stays continuation-triggered."""
++    from tests.test_attribution import S, V, _latent_case                    # reuse the v1.2 fixtures
++    for fault, cls in (("F9_LATENT_RESIDUAL", "HISTORY_CONDITIONED_LATENT"), ("F2_LOST_DELETE", "CONTINUATION_TRIGGERED")):
++        h, c = _latent_case(fault)
++        r = AT.attribute(lambda: ToyEngine(S, [V], fault), S, [V], h, c, 3)
++        assert r["attribution_class"] == cls, (fault, r)
++        assert r["canonical_path_result"].startswith("FC_PASS") and r["canonical_independent_of_history"]
++
++
++def test_e3_does_not_touch_search():
++    import inspect
++    from cutwitness import pipeline
++    assert "canonical_history" not in inspect.getsource(pipeline) and "attribution" not in inspect.getsource(pipeline.run_trial)
+diff --git a/tests/test_evidence_plumbing.py b/tests/test_evidence_plumbing.py
+index 09022d0..73adac7 100644
+--- a/tests/test_evidence_plumbing.py
++++ b/tests/test_evidence_plumbing.py
+@@ -129,7 +129,7 @@ def test_ablation_families_frozen_and_specified():
+     for fam, v in spec["ablation_families"].items():
+         assert fam in text and v["rq"] in text
+     ev = cfg["evidence"]["adjudication_protocol"]
+-    assert ev["path"].endswith("_v3.md")
++    assert ev["path"].endswith("_v4.md")
+     assert hashlib.sha256(open(os.path.join(ROOT, ev["path"]), "rb").read()).hexdigest() == ev["sha256"]
+ 
+ 
+diff --git a/tests/test_random_suffix.py b/tests/test_random_suffix.py
+index 62f0062..b38ca90 100644
+--- a/tests/test_random_suffix.py
++++ b/tests/test_random_suffix.py
+@@ -159,7 +159,7 @@ def test_inferential_families_are_disjoint_and_corrected_separately(tmp_path):
+ 
+ 
+ def test_root_level_terms_are_distinct_in_protocol_and_registry():
+-    proto = open(os.path.join(ROOT, "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v3.md")).read()
++    proto = open(os.path.join(ROOT, "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md")).read()
+     for term in ("Suffix-stage-specific", "Characterization-specific", "CW-exclusive", "Baseline-exclusive", "never merged"):
+         assert term in proto
+     reg = list(csv.DictReader(open(os.path.join(ROOT, "MANUSCRIPT_EVIDENCE_REGISTRY.csv"))))
+diff --git a/tools/make_config.py b/tools/make_config.py
+index 1caa458..4862bdd 100644
+--- a/tools/make_config.py
++++ b/tools/make_config.py
+@@ -67,7 +67,8 @@ COMMON["analysis_spec"] = {"version": "6", "path": "science/ANALYSIS_SPEC_v6.md"
+                           "ablate_no_reduction": {"rq": "RQ3", "primary_metric": "candidate_ttf"},
+                           "ablate_random_lifecycle": {"rq": "RQ4", "primary_metric": "lifecycle_rate_per_1000"},
+                           "ablate_random_suffix": {"rq": "RQ2b", "primary_metric": "matched_pair_exact_sign_test", "inferential": True, "paired": True}}}
+-EVID = {"adjudication_protocol": {"path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v3.md", "sha256": h("ROOT_CAUSE_ADJUDICATION_PROTOCOL_v3.md")},
++EVID = {"adjudication_protocol": {"path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md", "sha256": h("ROOT_CAUSE_ADJUDICATION_PROTOCOL_v4.md")},
++        "e3_amendment": {"path": "E3_ATTRIBUTION_AMENDMENT.md", "sha256": h("E3_ATTRIBUTION_AMENDMENT.md")},
+         "amendment_v1_4": {"path": "SCIENTIFIC_AMENDMENT_v1_4.md", "sha256": h("SCIENTIFIC_AMENDMENT_v1_4.md")},
+         "attribution_amendment": {"path": "CUTWITNESS_C_PREEXECUTION_ATTRIBUTION_AMENDMENT_v1_2.md", "sha256": h("CUTWITNESS_C_PREEXECUTION_ATTRIBUTION_AMENDMENT_v1_2.md"),
+                                   "replays_per_path": "nondet_reruns"},

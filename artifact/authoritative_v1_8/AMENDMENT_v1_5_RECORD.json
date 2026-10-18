@@ -1,0 +1,48 @@
+{
+ "amendment_commit": "77de539915a24d398736b622b9462007211fbc41",
+ "base_commit": "e28679850b1a9e8bfad2c38d08dbdebb12d3d4c9",
+ "classification": "PRE-EXECUTION ANALYSIS AMENDMENT v1.5 (analysis only; RQ2b matched-pair inference)",
+ "correction": "v1.4 made cutwitness_c and ablate_random_suffix matched pairs; v5's unpaired MW/A12/log-rank are replaced for RQ2b by an exact two-sided sign test on matched win/loss per target, with Holm over the valid target-level tests; KM is descriptive only",
+ "data_existed": false,
+ "matrix_unchanged": {
+  "ABLATION_UNITS": 270,
+  "RANDOM_SUFFIX_UNITS": 90,
+  "TOTAL_SLOT_HOURS": 3840,
+  "TOTAL_UNITS": 873,
+  "verified_by": "regenerated from code; tests/test_random_suffix.py::test_matrix_arithmetic_and_matched_seeds"
+ },
+ "spec": {
+  "path": "science/ANALYSIS_SPEC_v6.md",
+  "sha256": "3451aa338b91c68e6df5d8fb07da6d1abd36efdedef97aa35805a4daf8c65422"
+ },
+ "treatment_invariance": {
+  "results_byte_identical_vs_v1_4": true,
+  "results_files": 110,
+  "run_digest_note": "differs only through analysis outputs (new rq2b files, relabelled survival curves, removed unpaired RQ2b rows) and the analysis-spec/config digest in preseal metadata",
+  "witness_files": 48,
+  "witnesses_byte_identical_vs_v1_4": true
+ },
+ "unchanged": [
+  "ablate_random_suffix implementation",
+  "characterization suffix",
+  "matching contract",
+  "random-suffix policy",
+  "targets",
+  "workloads",
+  "matrix",
+  "units",
+  "seeds",
+  "budgets",
+  "repetitions",
+  "pilot",
+  "RQ structure",
+  "FC/PC/CC",
+  "E_loc",
+  "E_k^D",
+  "P2/P2'",
+  "Lemma D",
+  "P3",
+  "adjudication semantics",
+  "all other analysis families"
+ ]
+}

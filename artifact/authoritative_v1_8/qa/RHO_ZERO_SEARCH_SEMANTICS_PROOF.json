@@ -1,0 +1,19 @@
+{
+ "V1_7": {
+  "unit_ids_identical": true,
+  "results_identical_except_rho_field": true,
+  "witnesses_byte_identical": true,
+  "execution_logs_identical": true,
+  "rq2b_identical": true,
+  "rho_records_identical": true
+ },
+ "V1_6": {
+  "unit_ids_identical": true,
+  "results_identical_except_rho_field": true,
+  "witnesses_byte_identical": true,
+  "execution_logs_identical": true,
+  "rq2b_identical": true
+ },
+ "campaign_matrix_unchanged_since_V1_7": true,
+ "ZERO_SEARCH_SEMANTICS": "HOLDS"
+}

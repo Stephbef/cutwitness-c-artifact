@@ -1,0 +1,45 @@
+{
+ "adjudication_protocol": {
+  "path": "ROOT_CAUSE_ADJUDICATION_PROTOCOL_v1.md",
+  "sha256": "977f08a8f558ac39946fa9c42ddf769a465124c493a5ffa52c4ef680ea04113f"
+ },
+ "analysis_spec": {
+  "path": "science/ANALYSIS_SPEC_v2.md",
+  "sha256": "171df8710b7f4414802757fd2118abd00eeefdcd6d158f46aab7c6892c2c36bb"
+ },
+ "base_commit": "3b6130fd8f5efc03d4afd2e03ff926cf9bababdd",
+ "behaviour_invariance": {
+  "campaign_unit_fingerprints": "8/8 identical (CRASHTEST_SIMULATION)",
+  "tests": [
+   "tests/test_evidence_plumbing.py::test_instrumentation_preserves_search_behaviour_fingerprints",
+   "tests/test_evidence_plumbing.py::test_campaign_unit_fingerprints_preserved"
+  ],
+  "trial_fingerprints": "44/44 identical (11 tools x 4 fault models)"
+ },
+ "classification": "PRE-EXECUTION EVIDENCE-INSTRUMENTATION PATCH (Patch-2)",
+ "config_digest_after": "cf53f347404e14eb38363114226ffc75d102a55b926540bf78f8031c15296320",
+ "config_digest_before": "2ede888db8d895d58416cf1b951cd004dfa2c08664e55caf2b6ba777251a8cf1",
+ "config_keys_added": [
+  "analysis_spec",
+  "evidence"
+ ],
+ "config_keys_changed": [
+  "code_tree_digest"
+ ],
+ "note": "Only observation fields were added to unit results, witness records, S1 fingerprint and journal payloads; config gains analysis_spec and evidence (pre-registration), code_tree_digest changed.",
+ "patch_commit": "103dcb0f8081a0b5a125a4af09949ec7af8cff56",
+ "patch_digest_sha256": "2eae884d497b1d9803e88d470de610b6d2902b76c7a861a744d7e270e6bedf7d",
+ "scientific_amendment_required": false,
+ "unchanged": [
+  "treatment",
+  "targets",
+  "search behaviour",
+  "baselines",
+  "stopping rules (budgets)",
+  "TEST selection",
+  "scientific hypotheses",
+  "seeds",
+  "pilot gate",
+  "theorems"
+ ]
+}

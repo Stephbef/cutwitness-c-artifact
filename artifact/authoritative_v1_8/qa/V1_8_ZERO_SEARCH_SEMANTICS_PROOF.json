@@ -1,0 +1,24 @@
+{
+ "common_units": 110,
+ "comparison": "V1.8 (closure_order fix) vs V1.7.2 engineering simulation",
+ "consumers": {
+  "adjudication.validate_ledger": "reads witness status and target only",
+  "analysis.analyze/evidence_outputs": "reads id, minimizers, lengths, status",
+  "method attribution": "per-unit results (u['tool'], u['divergences']); never witness provenance"
+ },
+ "earlier_finding": "Before the fix, 9 witness files changed and 4 of them also in suffix/original_suffix, because the new arm sorted first in witness closure; fixed by closure_order.",
+ "new_unit_tools": [
+  "ablate_deletion_matched_suffix"
+ ],
+ "new_units": 9,
+ "target_executions_common": [
+  291,
+  291
+ ],
+ "units_differing": {},
+ "units_identical_excluding_volatile": 110,
+ "verdict": "ZERO REGRESSION FOR V1.7.2 ARMS",
+ "witnesses_byte_identical": 48,
+ "witnesses_only_in_v18": [],
+ "witnesses_v172": 48
+}
